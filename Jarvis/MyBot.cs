@@ -12,14 +12,14 @@ namespace Jarvis
     class MyBot
     {
         DiscordClient discord;
-
+        private DiscordClient _client;
         public MyBot()
         {
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
                 x.LogHandler = Log;
-            });
+            });            _client.Log.Message += (s, e) => Console.WriteLine($"[{e.Severity}] {e.Source}: {e.Message}");
 
 
             discord.MessageReceived += async (s, e) =>
