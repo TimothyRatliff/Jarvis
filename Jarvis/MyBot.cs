@@ -19,12 +19,13 @@ namespace Jarvis
             {
                 x.LogLevel = LogSeverity.Info;
                 x.LogHandler = Log;
-            });
+            });
+
 
             discord.MessageReceived += async (s, e) =>
             {
                 if (!e.Message.IsAuthor)
-                    await e.Channel.SendMessage("Hello Sir, glad to be here.");
+                    await e.Channel.SendMessage("Ping");
             };
 
             discord.ExecuteAndWait(async () => {
