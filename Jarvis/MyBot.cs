@@ -1,5 +1,8 @@
 ﻿using Discord;
+using Discord.Audio;
 using Discord.Commands;
+using Discord.Commands.Permissions.Levels;
+using Discord.Modules;
 
 using System;
 using System.Collections.Generic;
@@ -12,20 +15,25 @@ namespace Jarvis
     class MyBot
     {
         DiscordClient discord;
-        private DiscordClient _client;
         public MyBot()
         {
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
                 x.LogHandler = Log;
-            });            _client.Log.Message += (s, e) => Console.WriteLine($"[{e.Severity}] {e.Source}: {e.Message}");
-
+            });
 
             discord.MessageReceived += async (s, e) =>
             {
                 if (!e.Message.IsAuthor)
-                    await e.Channel.SendMessage("Ping");
+                {
+                    if(e.Message.Text.ToString() == "~ping")
+                    {
+                        await e.Channel.SendMessage("pong. I don't understand the point of this exercise.");
+                    }
+                    else
+                        await e.Channel.SendMessage("I seem to be *malfunctioning* again Sir...");
+                }
             };
 
             discord.ExecuteAndWait(async () => {
