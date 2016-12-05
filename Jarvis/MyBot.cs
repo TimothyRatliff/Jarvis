@@ -37,7 +37,7 @@ namespace Jarvis
             };
 
             discord.ExecuteAndWait(async () => {
-                await discord.Connect("MjM2MDEzMTYwMjI4NzE2NTQ0.CuYCvw.mFXFZGJm8QdXlayFtcN6WiBqQLw", TokenType.Bot);
+                await discord.Connect("", TokenType.Bot);
             });
         }
 
