@@ -31,13 +31,21 @@ namespace Jarvis
                     {
                         await e.Channel.SendMessage("pong. I don't understand the point of this exercise.");
                     }
-                    else
-                        await e.Channel.SendMessage("I seem to be *malfunctioning* again Sir...");
+                    if(e.Message.Text.ToString() == "~time")
+                    {
+                        await e.Channel.SendMessage("The current Central time is: " + DateTime.Now.ToString("h:mm:ss tt") + "");
+                    }
+                    //if (e.Message.Text.ToString() == "~clear 5")
+                    //{
+
+                    //}
+                    //else
+                    //    await e.Channel.SendMessage("I seem to be *malfunctioning* again Sir...");
                 }
             };
-
             discord.ExecuteAndWait(async () => {
-                await discord.Connect("", TokenType.Bot);
+                await discord.Connect("MjM2MDEzMTYwMjI4NzE2NTQ0.C44mtw.a6AiYLpmSNY4wj8ALiTRoYDBbes", TokenType.Bot);
+                discord.SetGame("mind games");
             });
         }
 
