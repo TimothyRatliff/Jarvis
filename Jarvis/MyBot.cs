@@ -44,6 +44,7 @@ namespace Jarvis
                 }
             };
             discord.ExecuteAndWait(async () => {
+                //If you are reading this on GitHub -> the following bot token will be invalid (for obvious reasons) #donthackme
                 await discord.Connect("MjM2MDEzMTYwMjI4NzE2NTQ0.C44mtw.a6AiYLpmSNY4wj8ALiTRoYDBbes", TokenType.Bot);
                 discord.SetGame("mind games");
             });
