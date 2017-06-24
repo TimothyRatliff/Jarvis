@@ -1,29 +1,61 @@
-﻿using Discord;
-using Discord.Audio;
-using Discord.Commands;
-using Discord.Commands.Permissions.Levels;
-using Discord.Modules;
-using System;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
+using Discord;
+using Discord.WebSocket;
+using Discord.Commands;
 
 namespace Jarvis
 {
     public class Program
     {
-        static void Main(string[] args) => new Program().Start(args);
+        // Convert our sync main to an async main.
+        public static void Main(string[] args) =>
+            new Program().Start().GetAwaiter().GetResult();
 
-        MyBot bot = new MyBot();
+        private DiscordSocketClient client;
+        private CommandHandler handler;
 
-        private const String AppName = "Jarvis";
-
-        private const String AppLink = "https://github.com/TimothyRatliff/Jarvis";
-
-        private void Start(string[] args)
+        public async Task Start()
         {
-#if !DNXCORE50
-            Console.Title = $"{AppName} (Discord.Net v{DiscordConfig.LibVersion})";
-#endif
+
+            // Define the DiscordSocketClient with a DiscordSocketConfig
+            client = new DiscordSocketClient(new DiscordSocketConfig() { LogLevel = LogSeverity.Info });
+			//anyone viewing this on github - this token will be invalid :)
+            var token = "MjM2MDEzMTYwMjI4NzE2NTQ0.DDBDig.09W6ZQU3PdQBlykA8DaWgJpPny8";
+
+            // Login and connect to Discord.
+            await client.LoginAsync(TokenType.Bot, token);
+            await client.StartAsync();
+
+            var map = new DependencyMap();
+            map.Add(client);
+
+            handler = new CommandHandler();
+            await handler.Install(map);
+
+            // add logger
+            client.Log += Log;
+
+            // Log the invite URL on client ready
+            client.Ready += Client_Ready;
+
+            // Block this program until it is closed.
+            await Task.Delay(-1);
+        }
+
+        // log the OAuth2 Invite URL of the bot on client ready so that user can see it on startup
+        private async Task Client_Ready()
+        {
+            var application = await client.GetApplicationInfoAsync();
+            await Log(new LogMessage(LogSeverity.Info, "Program",
+                $"Invite URL: <https://discordapp.com/oauth2/authorize?client_id={236013160228716544}&scope=bot&permissions=0>"));
+        }
+
+        // Bare minimum Logging function for both DiscordSocketClient and CommandService
+        public static Task Log(LogMessage msg)
+        {
+            Console.WriteLine(msg.ToString());
+            return Task.CompletedTask;
         }
     }
 }
