@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Discord;
+﻿using Discord;
 using Discord.WebSocket;
+using System;
+using System.Threading.Tasks;
 
-namespace Jarvis
+namespace MyBot
 {
-    public class Program
-    {
+	public class Program
+	{
 		public static void Main(string[] args)
 			=> new Program().MainAsync().GetAwaiter().GetResult();
 
@@ -19,7 +17,9 @@ namespace Jarvis
 
 			_client.Log += Log;
 
-			string token = "BD4ZJrAS8F-4pdyCluu_gGydnul6UcKA"; // Remember to keep this private!
+			_client.MessageReceived += MessageReceived;
+
+			string token = "MjM2MDEzMTYwMjI4NzE2NTQ0.DH_QMw.W4gM0UytYbYh8HCCZTdG5w917ZE"; // (fake token)
 			await _client.LoginAsync(TokenType.Bot, token);
 			await _client.StartAsync();
 
@@ -27,12 +27,19 @@ namespace Jarvis
 			await Task.Delay(-1);
 		}
 
+		private async Task MessageReceived(SocketMessage message)
+		{
+			if (message.Content == "say hello")
+			{
+				await message.Channel.SendMessageAsync("Hello!");
+			}
+		}
+
 		private Task Log(LogMessage msg)
 		{
 			Console.WriteLine(msg.ToString());
 			return Task.CompletedTask;
 		}
-
-
 	}
 }
+

@@ -1,0 +1,10 @@
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\bin\Debug\netcoreapp1.1\Jarvis01.deps.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\bin\Debug\netcoreapp1.1\Jarvis01.runtimeconfig.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\bin\Debug\netcoreapp1.1\Jarvis01.runtimeconfig.dev.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\bin\Debug\netcoreapp1.1\Jarvis01.dll
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\bin\Debug\netcoreapp1.1\Jarvis01.pdb
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\obj\Debug\netcoreapp1.1\Jarvis01.csprojResolveAssemblyReference.cache
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\obj\Debug\netcoreapp1.1\Jarvis01.csproj.CoreCompileInputs.cache
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\obj\Debug\netcoreapp1.1\Jarvis01.AssemblyInfo.cs
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\obj\Debug\netcoreapp1.1\Jarvis01.dll
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis01\obj\Debug\netcoreapp1.1\Jarvis01.pdb

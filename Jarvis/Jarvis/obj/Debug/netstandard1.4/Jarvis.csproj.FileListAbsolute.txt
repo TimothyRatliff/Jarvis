@@ -2,3 +2,11 @@ C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netstand
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netstandard1.4\Jarvis.dll
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.csprojResolveAssemblyReference.cache
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.AssemblyInfo.cs
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netstandard1.4\Jarvis.deps.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netstandard1.4\Jarvis.dll
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netstandard1.4\Jarvis.pdb
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.csprojResolveAssemblyReference.cache
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.csproj.CoreCompileInputs.cache
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.AssemblyInfo.cs
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.dll
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netstandard1.4\Jarvis.pdb
