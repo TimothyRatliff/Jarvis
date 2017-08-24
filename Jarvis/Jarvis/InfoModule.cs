@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Modules;
@@ -19,24 +21,25 @@ namespace Jarvis
 			await ReplyAsync(echo);
 		}
 
-		//// ~say info -> displays info
-		//[Command("info"), Summary("Displays bot info.")]
-		//public async Task Info([Remainder, Summary("The info")] string info)
-		//{
-		//	// ReplyAsync is a method on ModuleBase
-		//	await ReplyAsync(
-		//					$"{Format.Bold("Info")}\n" +
-		//					$"- Author: Tiiiimster (ID 102092268961296384)\n" +
-		//					$"- Library: {DiscordConfig.LibName} ({DiscordConfig.LibVersion})\n" +
-		//					$"- Runtime: {GetRuntime()} {GetBitness()}\n" +
-		//					$"- Uptime: {GetUptime()}\n\n" +
+		// ~say info -> displays info
+		[Command("info"), Summary("Displays bot info.")]
+		public async Task Info([Remainder, Summary("The info")] string info)
+		{
+			info = "Author: Tiiiimster (ID 102092268961296384)\n";
+				//$"{Format.Bold("Info")}\n" +
+				//			$"- Author: Tiiiimster (ID 102092268961296384)\n" +
+				//			$"- Library: \n" +
+				//			$"- Runtime: \n" +
+				//			$"- Uptime: \n\n" +
 
-		//					$"{Format.Bold("Stats")}\n" +
-		//					$"- Heap Size: {GetHeapSize()} MB\n" +
-		//					$"- Servers: {_client.Servers.Count()}\n" +
-		//					$"- Channels: {_client.Servers.Sum(x => x.AllChannels.Count())}\n" +
-		//					$"- Users: {_client.Servers.Sum(x => x.Users.Count())}");
-		//}
+				//			$"{Format.Bold("Stats")}\n" +
+				//			$"- Heap Size: MB\n" +
+				//			$"- Servers: \n" +
+				//			$"- Channels: \n" +
+				//			$"- Users: ";
+			// ReplyAsync is a method on ModuleBase
+			await ReplyAsync("Author: Tiiiimster (ID 102092268961296384)\n");
+		}
 
 	}
 }
