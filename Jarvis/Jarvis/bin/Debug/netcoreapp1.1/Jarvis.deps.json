@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "4b458afcb8e36c594187ee4594b0f2cc5e562cb6"
+    "signature": "75525971899f8877452ef9dfa62a2c5c58d6f9d0"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,8 +9,12 @@
       "jarvis/1.0.0": {
         "dependencies": {
           "Discord.Net": "1.0.1",
+          "Discord.Net.Audio": "0.9.6",
           "Discord.Net.Commands": "1.0.1",
-          "Discord.Net.Core": "1.0.1"
+          "Discord.Net.Core": "1.0.1",
+          "Discord.Net.Modules": "0.9.6",
+          "Discord.Net.WebSocket": "1.0.1",
+          "Discord.Net.Webhook": "1.0.1"
         },
         "runtime": {
           "Jarvis.dll": {}
@@ -24,6 +28,14 @@
           "Discord.Net.Rpc": "1.0.1",
           "Discord.Net.WebSocket": "1.0.1",
           "Discord.Net.Webhook": "1.0.1"
+        }
+      },
+      "discord.net.audio/0.9.6": {
+        "dependencies": {
+          "Discord.Net": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Discord.Net.Audio.dll": {}
         }
       },
       "discord.net.commands/1.0.1": {
@@ -43,6 +55,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Discord.Net.Core.dll": {}
+        }
+      },
+      "discord.net.modules/0.9.6": {
+        "dependencies": {
+          "Discord.Net": "1.0.1",
+          "Discord.Net.Commands": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Discord.Net.Modules.dll": {}
         }
       },
       "discord.net.rest/1.0.1": {
@@ -197,6 +218,13 @@
       "path": "discord.net/1.0.1",
       "hashPath": "discord.net.1.0.1.nupkg.sha512"
     },
+    "discord.net.audio/0.9.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GqlaGgXdruvzG3X6gkDdVYqsZVJ96jJb8xSB2eKBmaf0XTiVdwLngmYYtbW8QUDcsQoBU4nk4CkkMfzgLPMPrg==",
+      "path": "discord.net.audio/0.9.6",
+      "hashPath": "discord.net.audio.0.9.6.nupkg.sha512"
+    },
     "discord.net.commands/1.0.1": {
       "type": "package",
       "serviceable": true,
@@ -210,6 +238,13 @@
       "sha512": "sha512-WiNDLJMMdYOwy2xaJdUAoCvXloFL4EO1rB/JNA09Unca2m9kIbFg3c1LajgGL6mXaSlidu4Ypu4dSaD0fHoEig==",
       "path": "discord.net.core/1.0.1",
       "hashPath": "discord.net.core.1.0.1.nupkg.sha512"
+    },
+    "discord.net.modules/0.9.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NHQ24yIzXNlyMUD3HGcoxWDv5dcfOt1a//M3sO+aRDNH5gWrNqjNNCPNFp4AoUOFVqEZZinlIVISyMnCDjacYw==",
+      "path": "discord.net.modules/0.9.6",
+      "hashPath": "discord.net.modules.0.9.6.nupkg.sha512"
     },
     "discord.net.rest/1.0.1": {
       "type": "package",

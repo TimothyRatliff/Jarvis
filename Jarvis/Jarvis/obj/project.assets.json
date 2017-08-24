@@ -13,6 +13,19 @@
           "Discord.Net.Webhook": "1.0.1"
         }
       },
+      "Discord.Net.Audio/0.9.6": {
+        "type": "package",
+        "dependencies": {
+          "Discord.Net": "0.9.6",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Discord.Net.Audio.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Discord.Net.Audio.dll": {}
+        }
+      },
       "Discord.Net.Commands/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -40,6 +53,20 @@
         },
         "runtime": {
           "lib/netstandard1.3/Discord.Net.Core.dll": {}
+        }
+      },
+      "Discord.Net.Modules/0.9.6": {
+        "type": "package",
+        "dependencies": {
+          "Discord.Net": "0.9.6",
+          "Discord.Net.Commands": "0.9.6",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Discord.Net.Modules.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Discord.Net.Modules.dll": {}
         }
       },
       "Discord.Net.Rest/1.0.1": {
@@ -2595,6 +2622,17 @@
         "discord.net.nuspec"
       ]
     },
+    "Discord.Net.Audio/0.9.6": {
+      "sha512": "GqlaGgXdruvzG3X6gkDdVYqsZVJ96jJb8xSB2eKBmaf0XTiVdwLngmYYtbW8QUDcsQoBU4nk4CkkMfzgLPMPrg==",
+      "type": "package",
+      "path": "discord.net.audio/0.9.6",
+      "files": [
+        "Discord.Net.Audio.0.9.6.nupkg.sha512",
+        "Discord.Net.Audio.nuspec",
+        "lib/net45/Discord.Net.Audio.dll",
+        "lib/netstandard1.3/Discord.Net.Audio.dll"
+      ]
+    },
     "Discord.Net.Commands/1.0.1": {
       "sha512": "ElRbYXsR3WCLGN1Ln5nXc6twHyWOk3Prb1fANatjMk9Xi1dvY+uqjVgcVGmRKI85UOjlt9D5R7teXXPUokLp1g==",
       "type": "package",
@@ -2619,6 +2657,17 @@
         "lib/netstandard1.1/Discord.Net.Core.xml",
         "lib/netstandard1.3/Discord.Net.Core.dll",
         "lib/netstandard1.3/Discord.Net.Core.xml"
+      ]
+    },
+    "Discord.Net.Modules/0.9.6": {
+      "sha512": "NHQ24yIzXNlyMUD3HGcoxWDv5dcfOt1a//M3sO+aRDNH5gWrNqjNNCPNFp4AoUOFVqEZZinlIVISyMnCDjacYw==",
+      "type": "package",
+      "path": "discord.net.modules/0.9.6",
+      "files": [
+        "Discord.Net.Modules.0.9.6.nupkg.sha512",
+        "Discord.Net.Modules.nuspec",
+        "lib/net45/Discord.Net.Modules.dll",
+        "lib/netstandard1.3/Discord.Net.Modules.dll"
       ]
     },
     "Discord.Net.Rest/1.0.1": {
@@ -7844,9 +7893,12 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
       "Discord.Net >= 1.0.1",
+      "Discord.Net.Audio >= 0.9.6",
       "Discord.Net.Commands >= 1.0.1",
       "Discord.Net.Core >= 1.0.1",
+      "Discord.Net.Modules >= 0.9.6",
       "Discord.Net.WebSocket >= 1.0.1",
+      "Discord.Net.Webhook >= 1.0.1",
       "Microsoft.NETCore.App >= 1.1.2"
     ]
   },
@@ -7885,9 +7937,17 @@
     "frameworks": {
       "netcoreapp1.1": {
         "dependencies": {
+          "Discord.Net.Webhook": {
+            "target": "Package",
+            "version": "1.0.1"
+          },
           "Discord.Net.WebSocket": {
             "target": "Package",
             "version": "1.0.1"
+          },
+          "Discord.Net.Modules": {
+            "target": "Package",
+            "version": "0.9.6"
           },
           "Discord.Net.Commands": {
             "target": "Package",
@@ -7897,6 +7957,10 @@
             "target": "Package",
             "version": "1.1.2",
             "autoReferenced": true
+          },
+          "Discord.Net.Audio": {
+            "target": "Package",
+            "version": "0.9.6"
           },
           "Discord.Net": {
             "target": "Package",
