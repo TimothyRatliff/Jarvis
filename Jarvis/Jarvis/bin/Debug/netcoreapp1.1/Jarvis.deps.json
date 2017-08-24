@@ -1,21 +1,19 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "04ad9d93e89afd0dd1f0785a538bc4ddfcaa1fac"
+    "signature": "4b458afcb8e36c594187ee4594b0f2cc5e562cb6"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.1": {
-      "jarvis01/1.0.0": {
+      "jarvis/1.0.0": {
         "dependencies": {
           "Discord.Net": "1.0.1",
-          "Discord.Net.Audio": "0.9.6",
           "Discord.Net.Commands": "1.0.1",
-          "Discord.Net.Core": "1.0.1",
-          "Discord.Net.WebSocket": "1.0.1"
+          "Discord.Net.Core": "1.0.1"
         },
         "runtime": {
-          "Jarvis01.dll": {}
+          "Jarvis.dll": {}
         }
       },
       "discord.net/1.0.1": {
@@ -26,14 +24,6 @@
           "Discord.Net.Rpc": "1.0.1",
           "Discord.Net.WebSocket": "1.0.1",
           "Discord.Net.Webhook": "1.0.1"
-        }
-      },
-      "discord.net.audio/0.9.6": {
-        "dependencies": {
-          "Discord.Net": "1.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.3/Discord.Net.Audio.dll": {}
         }
       },
       "discord.net.commands/1.0.1": {
@@ -195,7 +185,7 @@
     }
   },
   "libraries": {
-    "jarvis01/1.0.0": {
+    "jarvis/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -206,13 +196,6 @@
       "sha512": "sha512-XtHV1DvqzBlwN1fPwurmxKNpUgCQ193wucXU7K+3yuF84bRVmRq68Hm+d8q1UE5Mqi4QJcoNGF8K08KL2hQZYQ==",
       "path": "discord.net/1.0.1",
       "hashPath": "discord.net.1.0.1.nupkg.sha512"
-    },
-    "discord.net.audio/0.9.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GqlaGgXdruvzG3X6gkDdVYqsZVJ96jJb8xSB2eKBmaf0XTiVdwLngmYYtbW8QUDcsQoBU4nk4CkkMfzgLPMPrg==",
-      "path": "discord.net.audio/0.9.6",
-      "hashPath": "discord.net.audio.0.9.6.nupkg.sha512"
     },
     "discord.net.commands/1.0.1": {
       "type": "package",

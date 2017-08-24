@@ -1,12 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="1.0.1" />
-    <PackageReference Include="Discord.Net.Audio" Version="0.9.6" />
     <PackageReference Include="Discord.Net.Commands" Version="1.0.1" />
     <PackageReference Include="Discord.Net.Core" Version="1.0.1" />
     <PackageReference Include="Discord.Net.WebSocket" Version="1.0.1" />
