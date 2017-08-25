@@ -21,6 +21,23 @@ namespace Jarvis
 			await ReplyAsync(echo);
 		}
 
+		[Command("help"), Summary("Displays a list of commands.")]
+		public async Task Help([Remainder, Summary("The list of commands")] string help)
+		{
+			await ReplyAsync(help);
+		}
+
+
+
+
+
+
+
+
+
+
+
+
 		// ~say info -> displays info
 		[Command("info"), Summary("Displays bot info.")]
 		public async Task Info([Remainder, Summary("The info")] string info)
