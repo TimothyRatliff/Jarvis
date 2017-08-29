@@ -13,24 +13,31 @@ namespace Jarvis
 {
     public class InfoModule : ModuleBase
     {
+
+		[Command("help"), Summary("Displays a list of commands.")]
+		public async Task Help([Remainder, Summary("The list of commands")] String help = null)
+		{
+			await Context.Channel.SendMessageAsync(
+							$"{Format.Bold("Commands")}\n\n" +
+							$"{ Format.Bold("Info Commands")}\n" +
+							$"- !help - Displays a list of commands \n" +
+							$"- !users  - Displays the amount of users connected to this server \n" +
+							$"- !say x - Repeats x message \n" +
+							$"- !square x - Squares x number \n" +
+							$"- !userinfo x- Displays user name with Discord tag number \n" +
+
+							$"{ Format.Bold("Admin Commands")}\n" +
+							$"- !purge x - Deletes x number of messages from the text channel \n" 
+
+							);
+		}
+
 		// ~say hello -> hello
 		[Command("say"), Summary("Echos a message.")]
 		public async Task Say([Remainder, Summary("The text to echo")] string echo)
 		{
 			// ReplyAsync is a method on ModuleBase
 			await ReplyAsync(echo);
-		}
-
-		[Command("help"), Summary("Displays a list of commands.")]
-		public async Task Help([Remainder, Summary("The list of commands")] string help)
-		{
-			await Context.Channel.SendMessageAsync($"{Format.Bold("Commands")}\n" +
-							$"- !say x - Repeats x message \n" +
-							$"- !help - Displays a list of commands \n" +
-							$"- !purge x - Deletes x number of messages from the text channel \n" +
-							$"- !square x - Squares x number \n" +
-							$"- !users  - Displays the amount of users connected to this server \n" +
-							$"- !userinfo x- Displays user name with Discord tag number \n");
 		}
 
 		// ~sample square 20 -> 400
