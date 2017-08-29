@@ -29,7 +29,8 @@ namespace Jarvis
 			_client.Log += Log;
 			_client.MessageReceived += MessageReceived;
 
-			string token = "MjM2MDEzMTYwMjI4NzE2NTQ0.DICm4A.h45R_dRSlT-GGI6gFM9ii-3WNgA"; // Remember to keep this private!
+			string token =
+				"MjM2MDEzMTYwMjI4NzE2NTQ0.DIc8lw.ww4vLlpdoiOY8mGGwerPDAh3BPk"; // Remember to keep this private!
 
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
