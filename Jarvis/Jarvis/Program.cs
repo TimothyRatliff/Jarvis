@@ -35,6 +35,7 @@ namespace Jarvis
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
 			await _client.StartAsync();
+			await _client.SetGameAsync("Visual Studio");
 
 			// Block this task until the program is closed.
 			await Task.Delay(-1);

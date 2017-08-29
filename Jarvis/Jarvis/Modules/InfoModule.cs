@@ -29,6 +29,7 @@ namespace Jarvis
 							$"- !help - Displays a list of commands \n" +
 							$"- !purge x - Deletes x number of messages from the text channel \n" +
 							$"- !square x - Squares x number \n" +
+							$"- !users  - Displays the amount of users connected to this server \n" +
 							$"- !userinfo x- Displays user name with Discord tag number \n");
 		}
 
@@ -54,25 +55,37 @@ namespace Jarvis
 			await ReplyAsync($"{userInfo.Username}#{userInfo.Discriminator}");
 		}
 
+		private static string GetHeapSize() => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString();
+		private static string GetBitness() => $"{IntPtr.Size * 8}-bit";
+		private static string GetUptime() => (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString(@"dd\.hh\:mm\:ss");
 		// ~say info -> displays info
 		[Command("info"), Summary("Displays bot info.")]
 		public async Task Info([Remainder, Summary("The info")] string info)
 		{
-			info = "Author: Tiiiimster (ID 102092268961296384)\n";
-				//$"{Format.Bold("Info")}\n" +
-				//			$"- Author: Tiiiimster (ID 102092268961296384)\n" +
-				//			$"- Library: \n" +
-				//			$"- Runtime: \n" +
-				//			$"- Uptime: \n\n" +
+			await Context.Channel.SendMessageAsync("" +
+							$"{ Format.Bold("Info")}\n" +
+							$"- Author: @Tiiiimster#0946 \n" +
+							$"- Library: {"Discord.Net Core"} ({DiscordConfig.APIVersion})\n" +
+							$"- Runtime: {".NETCore v1.1.2"} {GetBitness()}\n" +
+							$"- Uptime: {GetUptime()}\n\n" //+
 
-				//			$"{Format.Bold("Stats")}\n" +
-				//			$"- Heap Size: MB\n" +
-				//			$"- Servers: \n" +
-				//			$"- Channels: \n" +
-				//			$"- Users: ";
-			// ReplyAsync is a method on ModuleBase
-			await ReplyAsync("Author: Tiiiimster (ID 102092268961296384)\n");
+							//$"{Format.Bold("Stats")}\n" +
+							//$"- Heap Size: {GetHeapSize()} MB\n" +
+							//$"- Servers: {_client.Guilds.Count()}\n" +
+							//$"- Servers: {}\n" +
+							//$"- Channels: {_client.Guilds.Sum(x => x.Channels.Count())}\n" +
+							//$"- Users: {_client.Guilds.Sum(x => x.Users.Count())}"
+							);
 		}
+
+		[Command("users"), Summary("Gets the amount of users in the server")]
+		private async Task GetUsers()
+		{
+			var count = await Context.Guild.GetUsersAsync();
+			var users = count.Count();
+			await Context.Channel.SendMessageAsync($"There are currently {users} users in this server!");
+		}
+
 
 	}
 }
