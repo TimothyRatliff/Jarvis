@@ -60,21 +60,27 @@ namespace Jarvis
 		private static string GetUptime() => (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString(@"dd\.hh\:mm\:ss");
 		// ~say info -> displays info
 		[Command("info"), Summary("Displays bot info.")]
-		public async Task Info([Remainder, Summary("The info")] string info)
+		public async Task Info([Remainder, Summary("The info")] String info = null)
 		{
+			var guilds = await Context.Client.GetGuildsAsync();
+			var guildcount = guilds.Count();
+			var channels = await Context.Guild.GetChannelsAsync();
+			var channelscount = channels.Count();
+			var users = await Context.Guild.GetUsersAsync();
+			var userscount = users.Count();
 			await Context.Channel.SendMessageAsync("" +
 							$"{ Format.Bold("Info")}\n" +
 							$"- Author: @Tiiiimster#0946 \n" +
 							$"- Library: {"Discord.Net Core"} ({DiscordConfig.APIVersion})\n" +
 							$"- Runtime: {".NETCore v1.1.2"} {GetBitness()}\n" +
-							$"- Uptime: {GetUptime()}\n\n" //+
+							$"- Uptime: {GetUptime()}\n\n" +
 
-							//$"{Format.Bold("Stats")}\n" +
-							//$"- Heap Size: {GetHeapSize()} MB\n" +
-							//$"- Servers: {_client.Guilds.Count()}\n" +
-							//$"- Servers: {}\n" +
-							//$"- Channels: {_client.Guilds.Sum(x => x.Channels.Count())}\n" +
-							//$"- Users: {_client.Guilds.Sum(x => x.Users.Count())}"
+
+							$"{ Format.Bold("Stats")}\n" +
+							$"- Heap Size: {GetHeapSize()} mb\n" +
+							$"- Servers: {guildcount}\n" +
+							$"- Channels: {channelscount} (in this guild) \n" +
+							$"- Users: {userscount} (in this guild) \n" 
 							);
 		}
 
