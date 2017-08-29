@@ -24,7 +24,12 @@ namespace Jarvis
 		[Command("help"), Summary("Displays a list of commands.")]
 		public async Task Help([Remainder, Summary("The list of commands")] string help)
 		{
-			await ReplyAsync(help);
+			await Context.Channel.SendMessageAsync($"{Format.Bold("Commands")}\n" +
+							$"- !say x - Repeats x message \n" +
+							$"- !help - Displays a list of commands \n" +
+							$"- !purge x - Deletes x number of messages from the text channel \n" +
+							$"- !square x - Squares x number \n" +
+							$"- !userinfo x- Displays user name with Discord tag number \n");
 		}
 
 		// ~sample square 20 -> 400
@@ -48,22 +53,6 @@ namespace Jarvis
 			var userInfo = user ?? Context.Client.CurrentUser;
 			await ReplyAsync($"{userInfo.Username}#{userInfo.Discriminator}");
 		}
-
-		[Command("purge", RunMode = RunMode.Async)]
-		[Summary("Deletes the specified amount of messages.")]
-		[RequireUserPermission(GuildPermission.Administrator)]
-		[RequireBotPermission(ChannelPermission.ManageMessages)]
-		public async Task PurgeChat(uint amount)
-		{
-			var messages = await this.Context.Channel.GetMessagesAsync((int)amount + 1).Flatten();
-
-			await this.Context.Channel.DeleteMessagesAsync(messages);
-			const int delay = 5000;
-			var m = await this.ReplyAsync($"Purge completed. _This message will be deleted in {delay / 1000} seconds._");
-			await Task.Delay(delay);
-			await m.DeleteAsync();
-		}
-
 
 		// ~say info -> displays info
 		[Command("info"), Summary("Displays bot info.")]
