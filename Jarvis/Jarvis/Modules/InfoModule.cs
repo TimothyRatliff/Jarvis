@@ -25,6 +25,8 @@ namespace Jarvis
 							$"- !say x - Repeats x message \n" +
 							$"- !square x - Squares x number \n" +
 							$"- !userinfo x- Displays user name with Discord tag number \n" +
+							$"- !invlink - Displays the link to invite Jarvis to a server \n" +
+							$"- !info  - Displays info about Jarvis \n" +
 
 							$"{ Format.Bold("Admin Commands")}\n" +
 							$"- !purge x - Deletes x number of messages from the text channel \n" 
@@ -97,6 +99,12 @@ namespace Jarvis
 			var count = await Context.Guild.GetUsersAsync();
 			var users = count.Count();
 			await Context.Channel.SendMessageAsync($"There are currently {users} users in this server!");
+		}
+
+		[Command("invlink"), Summary("Displays the link to invite Jarvis to a server")]
+		private async Task InvLink()
+		{
+			await Context.Channel.SendMessageAsync($"Jarvis invite link: <https://discordapp.com/oauth2/authorize?client_id=236013160228716544&scope=bot&permissions=506985687>");
 		}
 
 
