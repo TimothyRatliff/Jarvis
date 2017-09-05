@@ -7903,7 +7903,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TimothyRatliff\\.nuget\\packages\\": {}
+    "C:\\Users\\Timothy Ratliff\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7911,14 +7911,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
+      "projectUniqueName": "C:\\Users\\Timothy Ratliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
       "projectName": "Jarvis",
-      "projectPath": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
-      "packagesPath": "C:\\Users\\TimothyRatliff\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\obj\\",
+      "projectPath": "C:\\Users\\Timothy Ratliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
+      "packagesPath": "C:\\Users\\Timothy Ratliff\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Timothy Ratliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\TimothyRatliff\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Timothy Ratliff\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

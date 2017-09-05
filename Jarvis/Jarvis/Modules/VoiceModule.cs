@@ -12,7 +12,7 @@ using Discord.Audio;
 
 namespace Jarvis.Modules
 {
-    class VoiceModule : ModuleBase
+    public class VoiceModule : ModuleBase
     {
 
 		[Command("join")]

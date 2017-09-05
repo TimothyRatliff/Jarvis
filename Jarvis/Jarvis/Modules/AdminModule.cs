@@ -12,7 +12,7 @@ using Discord.WebSocket;
 
 namespace Jarvis.Modules
 {
-    class AdminModule : ModuleBase
+    public class AdminModule : ModuleBase
     {
 		[Command("purge", RunMode = RunMode.Async)]
 		[Summary("Deletes the specified amount of messages.")]

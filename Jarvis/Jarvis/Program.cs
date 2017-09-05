@@ -30,7 +30,7 @@ namespace Jarvis
 			_client.MessageReceived += MessageReceived;
 
 			string token =
-				"MjM2MDEzMTYwMjI4NzE2NTQ0.DIiShA.YEggqw2CiDr12PD1Wv2-RIhTDQ8"; // Remember to keep this private!
+				"MjM2MDEzMTYwMjI4NzE2NTQ0.DJB6Pw.A_McYiygEnYCtx4dCEpfkGSn4oE"; // (this is never valid on GitHub)
 
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
@@ -45,7 +45,7 @@ namespace Jarvis
 		{
 			// Hook the MessageReceived Event into our Command Handler
 			_client.MessageReceived += HandleCommand;
-			// Discover all of the commands in this assembly and load them.
+			// Discover all of the commands in this assembly and load them
 			await commands.AddModulesAsync(Assembly.GetEntryAssembly());
 		}
 
