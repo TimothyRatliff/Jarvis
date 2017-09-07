@@ -30,7 +30,7 @@ namespace Jarvis
 			_client.MessageReceived += MessageReceived;
 
 			string token =
-				""; // (this is never valid on GitHub)
+				"MjM2MDEzMTYwMjI4NzE2NTQ0.DJB6Pw.A_McYiygEnYCtx4dCEpfkGSn4oE"; // (this is never valid on GitHub)
 
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
