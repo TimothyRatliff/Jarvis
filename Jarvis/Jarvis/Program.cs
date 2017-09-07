@@ -67,14 +67,6 @@ namespace Jarvis
 				await context.Channel.SendMessageAsync(result.ErrorReason);
 		}
 
-	private async Task MessageReceived(SocketMessage message)
-		{
-			if (message.Content == "!ping")
-			{
-				await message.Channel.SendMessageAsync("Pong!");
-			}
-		}
-
 		private Task Log(LogMessage msg)
 		{
 			Console.WriteLine(msg.ToString());
