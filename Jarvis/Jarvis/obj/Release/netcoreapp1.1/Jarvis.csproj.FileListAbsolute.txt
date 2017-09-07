@@ -8,3 +8,13 @@ C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcor
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.AssemblyInfo.cs
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.dll
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.pdb
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Release\netcoreapp1.1\Jarvis.deps.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Release\netcoreapp1.1\Jarvis.runtimeconfig.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Release\netcoreapp1.1\Jarvis.runtimeconfig.dev.json
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Release\netcoreapp1.1\Jarvis.dll
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Release\netcoreapp1.1\Jarvis.pdb
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.csprojResolveAssemblyReference.cache
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.csproj.CoreCompileInputs.cache
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.AssemblyInfo.cs
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.dll
+C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Release\netcoreapp1.1\Jarvis.pdb
