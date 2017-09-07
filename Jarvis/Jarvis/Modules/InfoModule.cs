@@ -27,20 +27,11 @@ namespace Jarvis
 							$"- !userinfo x- Displays user name with Discord tag number \n" +
 							$"- !invlink - Displays the link to invite Jarvis to a server \n" +
 							$"- !info  - Displays info about Jarvis \n" +
-							$"- !ping  - Replies with pong \n" +
 
 							$"{ Format.Bold("Admin Commands")}\n" +
 							$"- !purge x - Deletes x number of messages from the text channel \n" 
 
 							);
-		}
-
-		public async Task MessageReceived(SocketMessage message)
-		{
-			if (message.Content == "!ping")
-			{
-				await message.Channel.SendMessageAsync("Pong!");
-			}
 		}
 
 		// ~say hello -> hello
