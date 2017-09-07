@@ -11,12 +11,18 @@ using Discord.WebSocket;
 
 namespace Jarvis.Modules
 {
-    public class PublicModule
+    public class PublicModule : InfoModule
     {
-		private async Task JoinedGuild(SocketGuild context)
+
+		private async Task Welcome(SocketGuildUser user)
 		{
-			await context.CurrentUser.Guild.GetTextChannel(context.TextChannels.FirstOrDefault().Id)
-				.SendMessageAsync("Welcome " + context.CurrentUser.Mention + " to ***!");
+			
+			//	user = await user.
+			//	var guild = await Context.Client.;
+			//	var defaultChannelForUser = guild.TextChannels
+			//	.Where(c => targetUser.GetPermissions(c).ReadMessages)
+			//	.OrderBy(c => c.Position)
+			//	.FirstOrDefault();
 		}
 	}
 }

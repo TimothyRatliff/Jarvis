@@ -41,6 +41,11 @@ namespace Jarvis
 			await Task.Delay(-1);
 		}
 
+		public async Task WelcomeMessage(SocketGuildUser user)
+		{
+			
+		}
+
 		public async Task InstallCommands()
 		{
 			// Hook the MessageReceived Event into our Command Handler
