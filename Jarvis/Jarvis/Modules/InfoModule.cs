@@ -81,7 +81,7 @@ namespace Jarvis
 							$"{ Format.Bold("Info")}\n" +
 							$"- Author: @Tiiiimster#0946 \n" +
 							$"- Library: {"Discord.Net Core"} ({DiscordConfig.APIVersion})\n" +
-							$"- Runtime: {".NETCore v1.1.2"} {GetBitness()}\n" +
+							$"- Runtime: {".NETCore v2.0"} {GetBitness()}\n" +
 							$"- Uptime: {GetUptime()}\n\n" +
 
 
