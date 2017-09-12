@@ -27,6 +27,7 @@ namespace Jarvis
 							$"- !userinfo x- Displays user name with Discord tag number \n" +
 							$"- !invlink - Displays the link to invite Jarvis to a server \n" +
 							$"- !info  - Displays info about Jarvis \n" +
+							$"- !ping  - Replies if Jarvis is online \n" +
 
 							$"{ Format.Bold("Admin Commands")}\n" +
 							$"- !purge x - Deletes x number of messages from the text channel \n" 
@@ -91,6 +92,14 @@ namespace Jarvis
 							$"- Channels: {channelscount} (in this guild) \n" +
 							$"- Users: {userscount} (in this guild) \n" 
 							);
+		}
+
+		[Command("ping"), Summary("Replies to prove Jarvis is online")]
+		private async Task Ping()
+		{
+			
+			await Context.Channel.SendMessageAsync("Pong, I guess. I do get *tired* of this you know...");
+			
 		}
 
 		[Command("users"), Summary("Gets the amount of users in the server")]

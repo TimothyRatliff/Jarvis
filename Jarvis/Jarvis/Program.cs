@@ -27,10 +27,9 @@ namespace Jarvis
 			
 
 			_client.Log += Log;
-			_client.MessageReceived += MessageReceived;
 
 			string token =
-				"MjM2MDEzMTYwMjI4NzE2NTQ0.DJB6Pw.A_McYiygEnYCtx4dCEpfkGSn4oE"; // (this is never valid on GitHub)
+				""; // (this is never valid on GitHub)
 
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
@@ -70,14 +69,6 @@ namespace Jarvis
 			var result = await commands.ExecuteAsync(context, argPos, services);
 			if (!result.IsSuccess)
 				await context.Channel.SendMessageAsync(result.ErrorReason);
-		}
-
-	private async Task MessageReceived(SocketMessage message)
-		{
-			if (message.Content == "!ping")
-			{
-				await message.Channel.SendMessageAsync("Pong!");
-			}
 		}
 
 		private Task Log(LogMessage msg)
