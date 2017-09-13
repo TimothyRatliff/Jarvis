@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Reflection;
 using Discord;
@@ -28,8 +29,7 @@ namespace Jarvis
 
 			_client.Log += Log;
 
-			string token =
-				""; // (this is never valid on GitHub)
+			string token = File.ReadAllText("token.txt");
 
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
