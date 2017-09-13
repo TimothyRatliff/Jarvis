@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Reflection;
 using Discord;
@@ -28,8 +29,18 @@ namespace Jarvis
 
 			_client.Log += Log;
 
-			string token =
-				""; // (this is never valid on GitHub)
+			try
+			{
+				using (StreamReader sr = new StreamReader("token.txt"))
+				{
+					String token = sr.ReadToEnd();
+				}
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("The file could not be read:");
+				Console.WriteLine(e.Message);
+			}
 
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
