@@ -24,6 +24,7 @@ namespace Jarvis.Modules
 
 			// For the next step with transmitting audio, you would want to pass this Audio Client in to a service.
 			var audioClient = await channel.ConnectAsync();
+			Console.WriteLine(DateTime.Now.ToString() + "	JoinChannel | Guild: " +channel.Guild.Name+" | Channel: " + channel.Name + "");
 		}
 
 		[Command("leave")]
@@ -34,6 +35,8 @@ namespace Jarvis.Modules
 			if (channel == null) { await Context.Message.Channel.SendMessageAsync("User must be in a voice channel, or a voice channel must be passed as an argument."); return; }
 			_aclient = await channel.ConnectAsync();
 			await _aclient.StopAsync();
+
+			Console.WriteLine(DateTime.Now.ToString() + "	LeaveChannel | Guild: " + channel.Guild.Name + " | Channel: " + channel.Name + "");
 		}
 
 

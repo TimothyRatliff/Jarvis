@@ -20,6 +20,8 @@ namespace Jarvis
 
 		public async Task MainAsync()
 		{
+			string Jarvis = "Jarvis";
+			Console.Title = Jarvis;
 			_client = new DiscordSocketClient();
 			commands = new CommandService();
 

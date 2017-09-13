@@ -20,6 +20,7 @@ namespace Jarvis.Modules
 		[RequireBotPermission(ChannelPermission.ManageMessages)]
 		public async Task PurgeChat(uint amount)
 		{
+
 			var messages = await this.Context.Channel.GetMessagesAsync((int)amount + 1).Flatten();
 
 			await this.Context.Channel.DeleteMessagesAsync(messages);
@@ -27,6 +28,28 @@ namespace Jarvis.Modules
 			var m = await this.ReplyAsync($"Purge completed. _This message will be deleted in {delay / 1000} seconds._");
 			await Task.Delay(delay);
 			await m.DeleteAsync();
+
+			Console.WriteLine(DateTime.Now.ToString() + "	PurgeChat | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | Amount: " + amount + "");
 		}
+
+		//[Command("purgeu", RunMode = RunMode.Async)]
+		//[Summary("Deletes the specified amount of messages.")]
+		//[RequireUserPermission(GuildPermission.Administrator)]
+		//[RequireBotPermission(ChannelPermission.ManageMessages)]
+		//public async Task PurgeUChat(IGuildUser user = null, uint amount)
+		//{
+
+		//	var messages = await this.Context.Channel.GetMessagesAsync((int)amount + 1).Flatten();
+
+		//	//if(messages.)
+
+		//	await this.Context.Channel.DeleteMessagesAsync(messages);
+		//	const int delay = 5000;
+		//	var m = await this.ReplyAsync($"Purge completed. _This message will be deleted in {delay / 1000} seconds._");
+		//	await Task.Delay(delay);
+		//	await m.DeleteAsync();
+
+		//	Console.WriteLine(DateTime.Now.ToString() + "	PurgeUChat | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | Amount: " + amount + "");
+		//}
 	}
 }
