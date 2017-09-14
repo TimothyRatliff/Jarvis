@@ -14,15 +14,15 @@ namespace Jarvis.Modules
     public class PublicModule : InfoModule
     {
 
-		private async Task Welcome(SocketGuildUser user)
-		{
-			
-			//	user = await user.
-			//	var guild = await Context.Client.;
-			//	var defaultChannelForUser = guild.TextChannels
-			//	.Where(c => targetUser.GetPermissions(c).ReadMessages)
-			//	.OrderBy(c => c.Position)
-			//	.FirstOrDefault();
-		}
+		//private async Task Welcome(SocketGuildUser user)
+		//{
+
+		//	user = await user.
+		//		var guild = await Context.Client.;
+		//	var defaultChannelForUser = guild.TextChannels
+		//	.Where(c => targetUser.GetPermissions(c).ReadMessages)
+		//	.OrderBy(c => c.Position)
+		//	.FirstOrDefault();
+		//}
 	}
 }
