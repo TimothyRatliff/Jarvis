@@ -39,9 +39,12 @@ namespace Jarvis.Modules
 		//public async Task PurgeUChat(IGuildUser user = null, uint amount)
 		//{
 
+		// keep getting messages until we have amount of user messages aquired
 		//	var messages = await this.Context.Channel.GetMessagesAsync((int)amount + 1).Flatten();
+		//	//if(messages.
+		// going to have to use linq to sort through messages here
 
-		//	//if(messages.)
+
 
 		//	await this.Context.Channel.DeleteMessagesAsync(messages);
 		//	const int delay = 5000;

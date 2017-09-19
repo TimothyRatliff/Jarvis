@@ -13,16 +13,16 @@ namespace Jarvis.Modules
 {
     public class PublicModule : InfoModule
     {
+		private readonly DiscordSocketClient client;
 
-		//private async Task Welcome(SocketGuildUser user)
-		//{
-
-		//	user = await user.
-		//		var guild = await Context.Client.;
-		//	var defaultChannelForUser = guild.TextChannels
-		//	.Where(c => targetUser.GetPermissions(c).ReadMessages)
-		//	.OrderBy(c => c.Position)
-		//	.FirstOrDefault();
-		//}
+		public async Task UserJoined()
+		{
+			client.UserJoined += WelcomeUser;
+		}
+		public async Task WelcomeUser(SocketGuildUser user)
+		{
+			await Context.Channel.SendMessageAsync("Welcome" + user.Mention + "to the server!");
+			Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | User " + Context.User.Username + "");
+		}
 	}
 }
