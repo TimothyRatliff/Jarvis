@@ -63,7 +63,7 @@ namespace Jarvis
 			// Create a number to track where the prefix ends and the command begins
 			int argPos = 0;
 			// Determine if the message is a command, based on if it starts with '!' or a mention prefix
-			if (!(message.HasCharPrefix('!', ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos))) return;
+			if (!(message.HasCharPrefix('~', ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos))) return;
 			// Create a Command Context
 			var context = new CommandContext(_client, message);
 			// Execute the command. (result does not indicate a return value, 

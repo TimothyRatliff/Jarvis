@@ -20,17 +20,17 @@ namespace Jarvis
 			await Context.Channel.SendMessageAsync(
 							$"{Format.Bold("Commands")}\n\n" +
 							$"{ Format.Bold("Info Commands")}\n" +
-							$"- !help - Displays a list of commands \n" +
-							$"- !users  - Displays the amount of users connected to this server \n" +
-							$"- !say x - Repeats x message \n" +
-							$"- !square x - Squares x number \n" +
-							$"- !userinfo x- Displays user name with Discord tag number \n" +
-							$"- !invlink - Displays the link to invite Jarvis to a server \n" +
-							$"- !info  - Displays info about Jarvis \n" +
-							$"- !ping  - Replies if Jarvis is online \n" +
+							$"- ~help - Displays a list of commands \n" +
+							$"- ~users  - Displays the amount of users connected to this server \n" +
+							$"- ~say x - Repeats x message \n" +
+							$"- ~square x - Squares x number \n" +
+							$"- ~userinfo x- Displays user name with Discord tag number \n" +
+							$"- ~invlink - Displays the link to invite Jarvis to a server \n" +
+							$"- ~info  - Displays info about Jarvis \n" +
+							$"- ~ping  - Replies if Jarvis is online \n" +
 
 							$"{ Format.Bold("Admin Commands")}\n" +
-							$"- !purge x - Deletes x number of messages from the text channel \n" 
+							$"- ~purge x - Deletes x number of messages from the text channel \n" 
 
 							);
 			Console.WriteLine(DateTime.Now.ToString() + "	Help | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
