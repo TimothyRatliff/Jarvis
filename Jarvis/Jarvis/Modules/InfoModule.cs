@@ -30,7 +30,8 @@ namespace Jarvis
 							$"- ~ping  - Replies if Jarvis is online \n" +
 
 							$"{ Format.Bold("Admin Commands")}\n" +
-							$"- ~purge x - Deletes x number of messages from the text channel \n" 
+							$"- ~purge x - Deletes x number of messages from the text channel" +
+							$"- ~rolecount x - Displays the amount of users in this (x) role \n" 
 
 							);
 			Console.WriteLine(DateTime.Now.ToString() + "	Help | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
@@ -123,13 +124,6 @@ namespace Jarvis
 			Console.WriteLine(DateTime.Now.ToString() + "	InvLink | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
-		[Command("rolecount"), Summary("Displays the amount of users in this role")]
-		private async Task RoleCount(SocketRole role)
-		{
-			var rolecount = role.Members.Count();
-			await Context.Channel.SendMessageAsync($"There are currently **{rolecount}** users with this role in **{Context.Guild.Name}**!");
-			Console.WriteLine(DateTime.Now.ToString() + "	RoleCount | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
-		}
 
 	}
 }

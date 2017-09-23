@@ -54,5 +54,17 @@ namespace Jarvis.Modules
 
 		//	Console.WriteLine(DateTime.Now.ToString() + "	PurgeUChat | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | Amount: " + amount + "");
 		//}
+
+		[RequireUserPermission(GuildPermission.ManageRoles)]
+		[RequireBotPermission(GuildPermission.ManageRoles)]
+		[Command("rolecount"), Summary("Displays the amount of users in this role")]
+		private async Task RoleCount(SocketRole role)
+		{
+			var rolecount = role.Members.Count();
+			await Context.Channel.SendMessageAsync($"There are currently **{rolecount}** users with this role in **{Context.Guild.Name}**!");
+			Console.WriteLine(DateTime.Now.ToString() + "	RoleCount | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+		}
+
+
 	}
 }
