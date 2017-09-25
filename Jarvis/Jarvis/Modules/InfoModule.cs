@@ -28,6 +28,7 @@ namespace Jarvis
 							$"- ~invlink - Displays the link to invite Jarvis to a server \n" +
 							$"- ~info  - Displays info about Jarvis \n" +
 							$"- ~ping  - Replies if Jarvis is online \n" +
+							$"- ~wave  - :wave: :wink: \n" +
 
 							$"{ Format.Bold("Admin Commands")}\n" +
 							$"- ~purge x - Deletes x number of messages from the text channel" +
@@ -106,6 +107,22 @@ namespace Jarvis
 			
 			await Context.Channel.SendMessageAsync("Pong, I guess. I do get *tired* of this you know...");
 			Console.WriteLine(DateTime.Now.ToString() + "	Ping | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+		}
+
+		[Command("wave"), Summary("Replies with a wave ;)")]
+		private async Task Wave()
+		{
+
+			await Context.Channel.SendMessageAsync(":wave: https://i.imgur.com/APigjvz.gifv :wave:");
+			Console.WriteLine(DateTime.Now.ToString() + "	Wave | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+		}
+
+		[Command("nice"), Summary("Replies with niceme.me")]
+		private async Task Nice()
+		{
+
+			await Context.Channel.SendMessageAsync("http://niceme.me");
+			Console.WriteLine(DateTime.Now.ToString() + "	Nice | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
 		[Command("users"), Summary("Gets the amount of users in the server")]
