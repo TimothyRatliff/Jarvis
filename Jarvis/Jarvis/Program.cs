@@ -28,7 +28,7 @@ namespace Jarvis
 			services = new ServiceCollection()
 				.BuildServiceProvider();
 
-            //_client.UserJoined += WelcomeUser;
+            _client.UserJoined += WelcomeUser;
             _client.Log += Log;
 
 			string token = File.ReadAllText("token.txt");
@@ -47,18 +47,18 @@ namespace Jarvis
         //{
         //    _client.UserJoined += WelcomeUser;
         //}
-        //public async Task WelcomeUser(SocketGuildUser user)
-        //{
-        //    Console.WriteLine("Welcome1");
-        //    //need to find channel to send message in
-        //    var channel = user.Guild.DefaultChannel; //gets channel to send message in
-        //    Console.WriteLine("Welcome2");
-        //    await channel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //Welcomes the new user
-        //    Console.WriteLine("Welcome3");
-        //    //await Context.Channel.SendMessageAsync("Welcome" + user.Mention + "to the server!");
-        //    //Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | User " + Context.User.Username + "");
-        //    Console.WriteLine("Welcome4");
-        //}
+        public async Task WelcomeUser(SocketGuildUser user)
+        {
+            Console.WriteLine("Welcome1");
+            //need to find channel to send message in
+            var channel = user.Guild.DefaultChannel; //gets channel to send message in
+            Console.WriteLine("Welcome2");
+            await channel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //Welcomes the new user
+            Console.WriteLine("Welcome3");
+            //await Context.Channel.SendMessageAsync("Welcome" + user.Mention + "to the server!");
+            //Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | User " + Context.User.Username + "");
+            Console.WriteLine("Welcome4");
+        }
 
         public async Task InstallCommands()
 		{
