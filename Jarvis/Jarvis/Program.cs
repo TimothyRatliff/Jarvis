@@ -82,8 +82,8 @@ namespace Jarvis
 			// Execute the command. (result does not indicate a return value, 
 			// rather an object stating if the command executed successfully)
 			var result = await commands.ExecuteAsync(context, argPos, services);
-			if (!result.IsSuccess)
-				await context.Channel.SendMessageAsync(result.ErrorReason);
+			//if (!result.IsSuccess)
+			//	await context.Channel.SendMessageAsync(result.ErrorReason);
 		}
 
 		private Task Log(LogMessage msg)
