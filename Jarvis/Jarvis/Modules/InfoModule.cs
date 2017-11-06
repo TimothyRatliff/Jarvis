@@ -74,39 +74,95 @@ namespace Jarvis
 		private static string GetHeapSize() => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString();
 		private static string GetBitness() => $"{IntPtr.Size * 8}-bit";
 		private static string GetUptime() => (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString(@"dd\.hh\:mm\:ss");
-		// ~say info -> displays info
-		[Command("info"), Summary("Displays bot info.")]
-		public async Task Info([Remainder, Summary("The info")] String info = null)
-		{
-			var guilds = await Context.Client.GetGuildsAsync();
-			var guildcount = guilds.Count();
-			var channels = await Context.Guild.GetChannelsAsync();
-			var channelscount = channels.Count();
-			var users = await Context.Guild.GetUsersAsync();
-			var userscount = users.Count();
-			await Context.Channel.SendMessageAsync("" +
-							$"{ Format.Bold("Info")}\n" +
-							$"- Author: @Tiiiimster#0946 \n" +
-							$"- Library: {"Discord.Net Core"} ({DiscordConfig.APIVersion})\n" +
-							$"- Runtime: {".NETCore v2.0"} {GetBitness()}\n" +
-							$"- Uptime: {GetUptime()}\n\n" +
+        // ~say info -> displays info
+        [Command("info"), Summary("Displays bot info.")]
+        public async Task Info([Remainder, Summary("The info")] String info = null)
+        {
+            var guilds = await Context.Client.GetGuildsAsync();
+            var guildcount = guilds.Count();
+            var channels = await Context.Guild.GetChannelsAsync();
+            var channelscount = channels.Count();
+            var users = await Context.Guild.GetUsersAsync();
+            var userscount = users.Count();
+
+            var builder = new EmbedBuilder();
+            //builder.WithTitle("Info");
+            //builder.WithDescription("Here is some info about [me](http://www.jarvisbot.online)!");
+            //builder.WithUrl("(http://www.jarvisbot.online");
+            //builder.WithColor(new Color(0x6D8D9F));
+            //builder.WithTimestamp(DateTimeOffset.FromUnixTimeSeconds(1508182618044));
+            //builder.WithFooter(footer => {
+            //    footer
+            //            .WithText("footer text")
+            //            .WithIconUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            //    });
+            //builder.WithThumbnailUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            //builder.WithImageUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            //builder.WithAuthor(author =>
+            //{
+            //    author
+            //        .WithName("author name")
+            //        .WithUrl("https://discordapp.com")
+            //        .WithIconUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            //});
+            //builder.AddField("🤔Author:", "@Tiiiimster#0946");
+            //builder.AddField("😱Library:", "Discord.Net Core (6)");
+            //builder.AddField("🙄Runtime:", ".NETCore v2.0 64-bit");
+            //builder.AddInlineField("Uptime:", "uptime"); 
+            builder.WithTitle("Info");
+            builder.WithDescription("Here is some info about [me](http://www.jarvisbot.online)!");
+            builder.WithUrl("http://www.jarvisbot.online");
+            builder.WithAuthor(author =>
+            {
+                author
+                    .WithName("Jarvis")
+                    .WithUrl("http://www.jarvisbot.online")
+                    .WithIconUrl("https://imgur.com/a/GdzzY");
+            });
+            builder.WithFooter(footer => {
+                footer
+                    .WithText("Jarvis")
+                    .WithIconUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            });
+            builder.AddInlineField("Author:", "@Tiiiimster#0946");
+            builder.AddInlineField("Version:", "Jarvis v0.1.12");
+            builder.AddField("Library:", "Discord.Net Core (v6)");
+            builder.AddField("Runtime:", ".NETCore v2.0 64-bit");
+            builder.AddField("Website:", "http://www.jarvisbot.online"); 
+            builder.AddField("Uptime:", GetUptime());
+
+            builder.AddInlineField("Heap Size:", "" + GetHeapSize() + " mb");
+            builder.AddInlineField("Servers:", guildcount);
+
+            await Context.Channel.SendMessageAsync("", false, builder);
+
+            //await Context.Channel.SendMessageAsync("" +
+            //				$"{ Format.Bold("Info")}\n" +
+            //				$"- Author: @Tiiiimster#0946 \n" +
+            //				$"- Library: {"Discord.Net Core"} ({DiscordConfig.APIVersion})\n" +
+            //				$"- Runtime: {".NETCore v2.0"} {GetBitness()}\n" +
+            //				$"- Uptime: {GetUptime()}\n\n" +
 
 
-							$"{ Format.Bold("Stats")}\n" +
-							$"- Heap Size: {GetHeapSize()} mb\n" +
-							$"- Servers: {guildcount}\n" +
-							$"- Channels: {channelscount} (in this guild) \n" +
-							$"- Users: {userscount} (in this guild) \n" 
-							);
-			Console.WriteLine(DateTime.Now.ToString() + "	Info | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            //				$"{ Format.Bold("Stats")}\n" +
+            //				$"- Heap Size: {GetHeapSize()} mb\n" +
+            //				$"- Servers: {guildcount}\n" +
+            //				$"- Channels: {channelscount} (in this guild) \n" +
+            //				$"- Users: {userscount} (in this guild) \n" 
+            //				);
+            Console.WriteLine(DateTime.Now.ToString() + "	Info | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
 		[Command("ping"), Summary("Replies to prove Jarvis is online")]
 		private async Task Ping()
 		{
-			
-			await Context.Channel.SendMessageAsync("Pong, I guess. I do get *tired* of this you know...");
-			Console.WriteLine(DateTime.Now.ToString() + "	Ping | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            //var bd = new EmbedBuilder();
+            //bd.AddField("Pong!", " ");
+            //builder.WithThumbnailUrl("https://i.imgur.com/NB96RHF.gif");
+            //builder.WithImageUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            //await Context.Channel.SendMessageAsync("", false, bd);
+            await Context.Channel.SendMessageAsync("Pong!");
+            Console.WriteLine(DateTime.Now.ToString() + "	Ping | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
 		[Command("wave"), Summary("Replies with a wave ;)")]

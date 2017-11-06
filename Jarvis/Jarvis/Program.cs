@@ -12,7 +12,7 @@ namespace Jarvis
     class Program
     {
 		private CommandService commands;
-		private DiscordSocketClient _client;
+		public DiscordSocketClient _client;
 		private IServiceProvider services;
 
 		public static void Main(string[] args)
@@ -27,9 +27,9 @@ namespace Jarvis
 
 			services = new ServiceCollection()
 				.BuildServiceProvider();
-			
 
-			_client.Log += Log;
+            //_client.UserJoined += WelcomeUser;
+            _client.Log += Log;
 
 			string token = File.ReadAllText("token.txt");
 
@@ -38,16 +38,29 @@ namespace Jarvis
 			await _client.StartAsync();
 			await _client.SetGameAsync("jarvisbot.online");
 
-			// Block this task until the program is closed.
-			await Task.Delay(-1);
+
+            // Block this task until the program is closed.
+            await Task.Delay(-1);
 		}
 
-		//public async Task WelcomeMessage(SocketGuildUser user)
-		//{
-			
-		//}
+        //public async Task UserJoined()
+        //{
+        //    _client.UserJoined += WelcomeUser;
+        //}
+        //public async Task WelcomeUser(SocketGuildUser user)
+        //{
+        //    Console.WriteLine("Welcome1");
+        //    //need to find channel to send message in
+        //    var channel = user.Guild.DefaultChannel; //gets channel to send message in
+        //    Console.WriteLine("Welcome2");
+        //    await channel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //Welcomes the new user
+        //    Console.WriteLine("Welcome3");
+        //    //await Context.Channel.SendMessageAsync("Welcome" + user.Mention + "to the server!");
+        //    //Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | User " + Context.User.Username + "");
+        //    Console.WriteLine("Welcome4");
+        //}
 
-		public async Task InstallCommands()
+        public async Task InstallCommands()
 		{
 			// Hook the MessageReceived Event into our Command Handler
 			_client.MessageReceived += HandleCommand;

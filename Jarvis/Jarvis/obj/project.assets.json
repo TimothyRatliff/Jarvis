@@ -1812,12 +1812,12 @@
       ]
     },
     "Discord.Net.Modules/0.9.6": {
-      "sha512": "NHQ24yIzXNlyMUD3HGcoxWDv5dcfOt1a//M3sO+aRDNH5gWrNqjNNCPNFp4AoUOFVqEZZinlIVISyMnCDjacYw==",
+      "sha512": "/GQ/nn+HrcoDZOHFVx80cbyAW5XK4G5moXc81leXZ6Nc8DY1Ke8RBtIBxgSmTYbGP6T/DfRhYTTX4JTiverjYA==",
       "type": "package",
       "path": "discord.net.modules/0.9.6",
       "files": [
-        "Discord.Net.Modules.0.9.6.nupkg.sha512",
-        "Discord.Net.Modules.nuspec",
+        "discord.net.modules.0.9.6.nupkg.sha512",
+        "discord.net.modules.nuspec",
         "lib/net45/Discord.Net.Modules.dll",
         "lib/netstandard1.3/Discord.Net.Modules.dll"
       ]
@@ -5957,7 +5957,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Timothy Ratliff\\.nuget\\packages\\": {},
+    "C:\\Users\\TimothyRatliff\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -5966,17 +5966,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Timothy Ratliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
+      "projectUniqueName": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
       "projectName": "Jarvis",
-      "projectPath": "C:\\Users\\Timothy Ratliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
-      "packagesPath": "C:\\Users\\Timothy Ratliff\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Timothy Ratliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\obj\\",
+      "projectPath": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
+      "packagesPath": "C:\\Users\\TimothyRatliff\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Timothy Ratliff\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TimothyRatliff\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

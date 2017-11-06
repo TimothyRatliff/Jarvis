@@ -1116,7 +1116,7 @@
     "Discord.Net.Modules/0.9.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NHQ24yIzXNlyMUD3HGcoxWDv5dcfOt1a//M3sO+aRDNH5gWrNqjNNCPNFp4AoUOFVqEZZinlIVISyMnCDjacYw==",
+      "sha512": "sha512-/GQ/nn+HrcoDZOHFVx80cbyAW5XK4G5moXc81leXZ6Nc8DY1Ke8RBtIBxgSmTYbGP6T/DfRhYTTX4JTiverjYA==",
       "path": "discord.net.modules/0.9.6",
       "hashPath": "discord.net.modules.0.9.6.nupkg.sha512"
     },
