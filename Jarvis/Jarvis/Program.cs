@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Linq;
 using Discord;
 using Discord.WebSocket;
 using Discord.Commands;
@@ -49,15 +50,34 @@ namespace Jarvis
         //}
         public async Task WelcomeUser(SocketGuildUser user)
         {
-            Console.WriteLine("Welcome1");
             //need to find channel to send message in
-            var channel = user.Guild.DefaultChannel; //gets channel to send message in
-            Console.WriteLine("Welcome2");
-            await channel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //Welcomes the new user
-            Console.WriteLine("Welcome3");
+            var guild = user.Guild as IGuild;
+            var channels = await guild.GetTextChannelsAsync();
+            var thechannel = channels.FirstOrDefault();
+            //while(channels != null)
+            //{
+            //    var channel = channels.FirstOrDefault();
+            //    if (channel.Name == "general" || channel.Name == "welcome")
+            //    {
+            //        thechannel = channel;
+            //        channels = null;
+            //        await channel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //welcomes the new user
+
+            //    }
+            //    else
+            //    {
+            //        channels.Skip(1);
+            //        Console.WriteLine("Unable to find general or welcome channel, only found: " + channel.Name + "");
+            //    }
+
+            //}
+            await thechannel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //welcomes the new user
+            Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + user.Guild.Name + " | Channel: " + thechannel.Name + " | User " + user.Username + "");
+
+            //Console.WriteLine("Channel Name: " + channel.Name + "");
+            //await channel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //Welcomes the new user
             //await Context.Channel.SendMessageAsync("Welcome" + user.Mention + "to the server!");
             //Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | User " + Context.User.Username + "");
-            Console.WriteLine("Welcome4");
         }
 
         public async Task InstallCommands()
