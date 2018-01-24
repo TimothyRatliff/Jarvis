@@ -71,7 +71,7 @@ namespace Jarvis
             //    }
 
             //}
-            await thechannel.SendMessageAsync("Welcome " + user.Mention + " to the server!"); //welcomes the new user
+            await thechannel.SendMessageAsync("Welcome " + user.Mention + " to " + user.Guild.Name + "!"); //welcomes the new user
             Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + user.Guild.Name + " | Channel: " + thechannel.Name + " | User " + user.Username + "");
 
             //Console.WriteLine("Channel Name: " + channel.Name + "");
