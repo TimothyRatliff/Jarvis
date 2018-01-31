@@ -34,11 +34,14 @@ namespace Jarvis.Modules
             String question = abc[0];
             String option1 = abc[1];
             String option2 = abc[2];
+            String time = abc[3];
             
 
 
             var context = Context.Channel;
-            const int delay = 5000;
+
+            int delay = Int32.Parse(time) * 1000;
+            //const int delay = 5000;
 
             var builder = new EmbedBuilder();
             builder.WithTitle("Poll");
