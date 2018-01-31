@@ -47,20 +47,15 @@ namespace Jarvis.Modules
 
             IUserMessage message = await context.SendMessageAsync("", false, builder);
 
-            await message.AddReactionAsync(Emote.Parse("\\:thumbsup:"));
+            await message.AddReactionAsync(new Emoji("\U0001f44d"));
+            await message.AddReactionAsync(new Emoji("\U0001f44e"));
 
-            //if (Emote.TryParse(":thumbsup:", out Emote emote))
-            //    await message.AddReactionAsync(emote);
-            //else
-            //    await context.SendMessageAsync("no reaction found LUL :thumbsup:");
-
-            //await message.AddReactionAsync(new Emoji("\\U+1F44E"));
             //var m = await context.SendMessageAsync($"Poll started _The poll will end in {delay / 1000} seconds._");
             //await Task.Delay(delay);
             //await m.DeleteAsync();
-            //var x = await message.GetReactionUsersAsync("U+1F44D", 1000);
+            //var x = await message.GetReactionUsersAsync("\U0001f44d", 1000);
             //int xnumber = x.Count();
-            //var y = await message.GetReactionUsersAsync("U+1F44E", 1000);
+            //var y = await message.GetReactionUsersAsync("\U0001f44e", 1000);
             //int ynumber = x.Count();
             //if (xnumber > ynumber)
             //{
