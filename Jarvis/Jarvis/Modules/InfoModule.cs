@@ -30,8 +30,12 @@ namespace Jarvis
 							$"- ~ping  - Replies if Jarvis is online \n" +
 							$"- ~wave  - :wave: :wink: \n" +
 
-							$"{ Format.Bold("Admin Commands")}\n" +
-							$"- ~purge x - Deletes x number of messages from the text channel" +
+                            $"{ Format.Bold("Public Commands")}\n" +
+                            $"- ~poll x | y | z - Creates a poll with x question and y/z as the options in the poll \n" +
+
+
+                            $"{ Format.Bold("Admin Commands")}\n" +
+							$"- ~purge x - Deletes x number of messages from the text channel \n" +
 							$"- ~rolecount x - Displays the amount of users in this (x) role \n" 
 
 							);

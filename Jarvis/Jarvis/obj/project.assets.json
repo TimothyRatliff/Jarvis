@@ -5958,6 +5958,7 @@
   },
   "packageFolders": {
     "C:\\Users\\TimothyRatliff\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -5973,11 +5974,13 @@
       "outputPath": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\TimothyRatliff\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -6000,34 +6003,34 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Discord.Net.Webhook": {
+          "Discord.Net": {
             "target": "Package",
-            "version": "1.0.2"
-          },
-          "Discord.Net.WebSocket": {
-            "target": "Package",
-            "version": "1.0.2"
-          },
-          "Discord.Net.Modules": {
-            "target": "Package",
-            "version": "0.9.6"
+            "version": "[1.0.2, )"
           },
           "Discord.Net.Commands": {
             "target": "Package",
-            "version": "1.0.2"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
-          "Discord.Net": {
-            "target": "Package",
-            "version": "1.0.2"
+            "version": "[1.0.2, )"
           },
           "Discord.Net.Core": {
             "target": "Package",
-            "version": "1.0.2"
+            "version": "[1.0.2, )"
+          },
+          "Discord.Net.Modules": {
+            "target": "Package",
+            "version": "[0.9.6, )"
+          },
+          "Discord.Net.WebSocket": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
+          "Discord.Net.Webhook": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           }
         },
         "imports": [
