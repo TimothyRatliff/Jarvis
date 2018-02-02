@@ -8,6 +8,7 @@ using Discord;
 using Discord.Modules;
 using Discord.Commands;
 using Discord.WebSocket;
+using Jarvis.addons.Logging;
 
 namespace Jarvis
 {
@@ -39,7 +40,7 @@ namespace Jarvis
 							$"- ~rolecount x - Displays the amount of users in this (x) role \n" 
 
 							);
-			Console.WriteLine(DateTime.Now.ToString() + "	Help | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            Logger.LoggerInstance.Log("help", Context.Guild, Context.Channel);
 		}
 
 		// ~say hello -> hello
@@ -48,7 +49,8 @@ namespace Jarvis
 		{
 			// ReplyAsync is a method on ModuleBase
 			await ReplyAsync(echo);
-			Console.WriteLine(DateTime.Now.ToString() + "	Say | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | Message: " + echo + "");
+
+            Logger.LoggerInstance.LogInfo("say", Context.Guild, Context.Channel, echo);
 		}
 
 		// ~sample square 20 -> 400
@@ -57,7 +59,8 @@ namespace Jarvis
 		{
 			// We can also access the channel from the Command Context.
 			await Context.Channel.SendMessageAsync($"{num}^2 = {Math.Pow(num, 2)}");
-			Console.WriteLine(DateTime.Now.ToString() + "	Square| Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | Number: " + num + "");
+
+            Logger.LoggerInstance.LogInfo("square", Context.Guild, Context.Channel, num.ToString());
 		}
 
 		// ~sample userinfo --> foxbot#0282
@@ -72,7 +75,9 @@ namespace Jarvis
 		{
 			var userInfo = user ?? Context.Client.CurrentUser;
 			await ReplyAsync($"{userInfo.Username}#{userInfo.Discriminator}");
-			Console.WriteLine(DateTime.Now.ToString() + "	UserInfo | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+
+            Logger.LoggerInstance.LogInfo("userinfo", Context.Guild, Context.Channel, user.ToString());
+            Console.WriteLine(DateTime.Now.ToString() + "	UserInfo | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
 		private static string GetHeapSize() => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString();
@@ -154,7 +159,7 @@ namespace Jarvis
             //				$"- Channels: {channelscount} (in this guild) \n" +
             //				$"- Users: {userscount} (in this guild) \n" 
             //				);
-            Console.WriteLine(DateTime.Now.ToString() + "	Info | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            Logger.LoggerInstance.Log("info", Context.Guild, Context.Channel);
 		}
 
 		[Command("ping"), Summary("Replies to prove Jarvis is online")]
@@ -166,7 +171,7 @@ namespace Jarvis
             bd.WithImageUrl("https://cdn.discordapp.com/embed/avatars/0.png");
             await Context.Channel.SendMessageAsync("", false, bd);
             //await Context.Channel.SendMessageAsync("Pong!");
-            Console.WriteLine(DateTime.Now.ToString() + "	Ping | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            Logger.LoggerInstance.Log("ping", Context.Guild, Context.Channel);
 		}
 
 		[Command("wave"), Summary("Replies with a wave ;)")]
@@ -174,7 +179,7 @@ namespace Jarvis
 		{
 
 			await Context.Channel.SendMessageAsync(":wave: https://i.imgur.com/APigjvz.gifv :wave:");
-			Console.WriteLine(DateTime.Now.ToString() + "	Wave | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            Logger.LoggerInstance.Log("wave", Context.Guild, Context.Channel);
 		}
 
 		[Command("nice"), Summary("Replies with niceme.me")]
@@ -182,25 +187,27 @@ namespace Jarvis
 		{
 
 			await Context.Channel.SendMessageAsync("http://niceme.me");
-			Console.WriteLine(DateTime.Now.ToString() + "	Nice | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            Logger.LoggerInstance.Log("uice", Context.Guild, Context.Channel);
 		}
 
-		[Command("users"), Summary("Gets the amount of users in the server")]
-		private async Task GetUsers()
+		[Command("usercount"), Summary("Gets the amount of users in the server")]
+		private async Task UserCount()
 		{
 			var count = await Context.Guild.GetUsersAsync();
 			var users = count.Count();
-			await Context.Channel.SendMessageAsync($"There are currently {users} users in this server!");
-			Console.WriteLine(DateTime.Now.ToString() + "	GetUsers | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+			await Context.Channel.SendMessageAsync($"There are currently **{users}** users in this server!");
+
+            Logger.LoggerInstance.Log("usercount", Context.Guild, Context.Channel);
 		}
 
 		[Command("invlink"), Summary("Displays the link to invite Jarvis to a server")]
 		private async Task InvLink()
 		{
 			await Context.Channel.SendMessageAsync($"Jarvis invite link: <https://discordapp.com/oauth2/authorize?client_id=236013160228716544&scope=bot&permissions=506985687>");
-			Console.WriteLine(DateTime.Now.ToString() + "	InvLink | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
-		}
+            Logger.LoggerInstance.Log("invlink", Context.Guild, Context.Channel);
+
+        }
 
 
-	}
+    }
 }
