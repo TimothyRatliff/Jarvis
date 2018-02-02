@@ -77,7 +77,6 @@ namespace Jarvis
 			await ReplyAsync($"{userInfo.Username}#{userInfo.Discriminator}");
 
             Logger.LoggerInstance.LogInfo("userinfo", Context.Guild, Context.Channel, user.ToString());
-            Console.WriteLine(DateTime.Now.ToString() + "	UserInfo | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
 		private static string GetHeapSize() => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString();
@@ -205,7 +204,6 @@ namespace Jarvis
 		{
 			await Context.Channel.SendMessageAsync($"Jarvis invite link: <https://discordapp.com/oauth2/authorize?client_id=236013160228716544&scope=bot&permissions=506985687>");
             Logger.LoggerInstance.Log("invlink", Context.Guild, Context.Channel);
-
         }
 
 

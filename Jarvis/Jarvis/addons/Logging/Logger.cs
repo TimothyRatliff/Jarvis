@@ -63,7 +63,24 @@ namespace Jarvis.addons.Logging
             outstrm.Close();
         }
 
-
+        public void Error(String command, IGuild guild, IChannel channel, String error)
+        {
+            Console.WriteLine($"{DateTime.Now.ToString()} | {command.ToString()} | {guild.Name} | {channel.Name} | {error}");
+            try
+            {
+                outstrm = new FileStream("./errors.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                writer = new StreamWriter(outstrm);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Cannot open errors.txt for writing");
+                Console.WriteLine(e.Message);
+                return;
+            }
+            writer.WriteLine($"{DateTime.Now.ToString()} | {command} | {guild.Name} | {channel.Name} | {error}"); ;
+            writer.Close();
+            outstrm.Close();
+        }
 
     }
 }
