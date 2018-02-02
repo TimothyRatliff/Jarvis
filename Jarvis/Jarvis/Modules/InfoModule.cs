@@ -160,12 +160,12 @@ namespace Jarvis
 		[Command("ping"), Summary("Replies to prove Jarvis is online")]
 		private async Task Ping()
 		{
-            //var bd = new EmbedBuilder();
-            //bd.AddField("Pong!", " ");
-            //builder.WithThumbnailUrl("https://i.imgur.com/NB96RHF.gif");
-            //builder.WithImageUrl("https://cdn.discordapp.com/embed/avatars/0.png");
-            //await Context.Channel.SendMessageAsync("", false, bd);
-            await Context.Channel.SendMessageAsync("Pong!");
+            var bd = new EmbedBuilder();
+            bd.AddField("Pong!", " ");
+            bd.WithThumbnailUrl("https://i.imgur.com/NB96RHF.gif");
+            bd.WithImageUrl("https://cdn.discordapp.com/embed/avatars/0.png");
+            await Context.Channel.SendMessageAsync("", false, bd);
+            //await Context.Channel.SendMessageAsync("Pong!");
             Console.WriteLine(DateTime.Now.ToString() + "	Ping | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
 		}
 
