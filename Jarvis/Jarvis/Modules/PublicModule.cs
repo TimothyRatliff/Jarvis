@@ -115,7 +115,7 @@ namespace Jarvis.Modules
         private async Task ListRole()
         {
             await Context.Channel.SendMessageAsync("Joinable roles: ");
-            Logger.LoggerInstance.LogInfo("listroles", Context.Guild, Context.Channel, );
+            Logger.LoggerInstance.Log("listroles", Context.Guild, Context.Channel);
         }
     }
 }
