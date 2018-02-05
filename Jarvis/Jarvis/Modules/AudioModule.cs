@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
+using Jarvis.addons.Logging;
 
 namespace Discord.Addons.SimpleAudio
 {

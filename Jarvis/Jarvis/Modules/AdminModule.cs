@@ -8,6 +8,7 @@ using Discord;
 using Discord.Modules;
 using Discord.Commands;
 using Discord.WebSocket;
+using Jarvis.addons.Logging;
 
 
 namespace Jarvis.Modules
@@ -29,7 +30,7 @@ namespace Jarvis.Modules
             await Task.Delay(delay);
             await m.DeleteAsync();
 
-            Console.WriteLine(DateTime.Now.ToString() + "	PurgeChat | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | Amount: " + amount + "");
+            Logger.LoggerInstance.Log("purge", Context.Guild, Context.Channel);
         }
 
         //[Command("purgeu", RunMode = RunMode.Async)]
@@ -62,7 +63,7 @@ namespace Jarvis.Modules
         {
             var rolecount = role.Members.Count();
             await Context.Channel.SendMessageAsync($"There are currently **{rolecount}** users with the **{role}** role in **{Context.Guild.Name}**!");
-            Console.WriteLine(DateTime.Now.ToString() + "	RoleCount | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + "");
+            Logger.LoggerInstance.LogInfo("rolecount", Context.Guild, Context.Channel, role.Name);
         }
 
         [RequireUserPermission(GuildPermission.ManageRoles)]
@@ -80,6 +81,8 @@ namespace Jarvis.Modules
                 await Context.Guild.CreateRoleAsync("+" + input);
                 await Context.Channel.SendMessageAsync("Created role: **" + input + "**");
             }
+
+            Logger.LoggerInstance.LogInfo("addrole", Context.Guild, Context.Channel, input);
         }
 
         [RequireUserPermission(GuildPermission.ManageRoles)]
@@ -90,6 +93,8 @@ namespace Jarvis.Modules
             var role = Context.Guild.Roles.FirstOrDefault(x => x.Name.ToString() == input);
             await role.DeleteAsync();
             await Context.Channel.SendMessageAsync("Deleted role: **" + input + "**");
+
+            Logger.LoggerInstance.LogInfo("deleterole", Context.Guild, Context.Channel, role.Name);
         }
 
 
@@ -113,12 +118,12 @@ namespace Jarvis.Modules
                     {
                         await user.AddRoleAsync(role);
                         await Context.Channel.SendMessageAsync("Successfully gave " + user.Mention + " **" + role.ToString() + "**");
+                        Logger.LoggerInstance.LogInfo("join", Context.Guild, Context.Channel, role.Name);
                     }
                 }
             }
             else
-                await Context.Channel.SendMessageAsync("Unable to find role: **" + input + "**");
-
+                await Context.Channel.SendMessageAsync("Unable to find joinable role: **" + input + "**");
         }
 
         [RequireUserPermission(GuildPermission.ManageRoles)]
@@ -127,6 +132,7 @@ namespace Jarvis.Modules
         private async Task ListRole()
         {
             await Context.Channel.SendMessageAsync("Joinable roles: ");
+            Logger.LoggerInstance.LogInfo("listroles", Context.Guild, Context.Channel, );
         }
 
         [RequireOwner]

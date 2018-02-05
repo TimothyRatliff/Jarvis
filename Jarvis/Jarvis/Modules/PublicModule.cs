@@ -8,6 +8,7 @@ using Discord;
 using Discord.Modules;
 using Discord.Commands;
 using Discord.WebSocket;
+using Jarvis.addons.Logging;
 
 namespace Jarvis.Modules
 {
@@ -78,7 +79,7 @@ namespace Jarvis.Modules
             else
                 await context.SendMessageAsync("It's a tie!");
 
-
+            Logger.LoggerInstance.Log("poll", Context.Guild, Context.Channel);
         }
 
     }
