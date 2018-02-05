@@ -43,16 +43,6 @@ namespace Jarvis
             Logger.LoggerInstance.Log("help", Context.Guild, Context.Channel);
 		}
 
-		// ~say hello -> hello
-		[Command("say"), Summary("Echos a message.")]
-		public async Task Say([Remainder, Summary("The text to echo")] string echo)
-		{
-			// ReplyAsync is a method on ModuleBase
-			await ReplyAsync(echo);
-
-            Logger.LoggerInstance.LogInfo("say", Context.Guild, Context.Channel, echo);
-		}
-
 		// ~sample square 20 -> 400
 		[Command("square"), Summary("Squares a number.")]
 		public async Task Square([Summary("The number to square.")] int num)
@@ -176,7 +166,6 @@ namespace Jarvis
 		[Command("wave"), Summary("Replies with a wave ;)")]
 		private async Task Wave()
 		{
-
 			await Context.Channel.SendMessageAsync(":wave: https://i.imgur.com/APigjvz.gifv :wave:");
             Logger.LoggerInstance.Log("wave", Context.Guild, Context.Channel);
 		}
@@ -186,17 +175,7 @@ namespace Jarvis
 		{
 
 			await Context.Channel.SendMessageAsync("http://niceme.me");
-            Logger.LoggerInstance.Log("uice", Context.Guild, Context.Channel);
-		}
-
-		[Command("usercount"), Summary("Gets the amount of users in the server")]
-		private async Task UserCount()
-		{
-			var count = await Context.Guild.GetUsersAsync();
-			var users = count.Count();
-			await Context.Channel.SendMessageAsync($"There are currently **{users}** users in this server!");
-
-            Logger.LoggerInstance.Log("usercount", Context.Guild, Context.Channel);
+            Logger.LoggerInstance.Log("nice", Context.Guild, Context.Channel);
 		}
 
 		[Command("invlink"), Summary("Displays the link to invite Jarvis to a server")]

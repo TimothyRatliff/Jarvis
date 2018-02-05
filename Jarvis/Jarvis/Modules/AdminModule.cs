@@ -15,9 +15,14 @@ namespace Jarvis.Modules
 {
     public class AdminModule : ModuleBase
     {
+
+
+
+        //Admin only commands
+
         [Command("purge", RunMode = RunMode.Async)]
         [Summary("Deletes the specified amount of messages.")]
-        [RequireUserPermission(GuildPermission.Administrator)]
+        [RequireUserPermission(GuildPermission.ManageMessages)]
         [RequireBotPermission(ChannelPermission.ManageMessages)]
         public async Task PurgeChat(uint amount)
         {
@@ -66,6 +71,17 @@ namespace Jarvis.Modules
             Logger.LoggerInstance.LogInfo("rolecount", Context.Guild, Context.Channel, role.Name);
         }
 
+        [RequireUserPermission(GuildPermission.ManageChannels)]
+        [Command("usercount"), Summary("Gets the amount of users in the server")]
+        private async Task UserCount()
+        {
+            var count = await Context.Guild.GetUsersAsync();
+            var users = count.Count();
+            await Context.Channel.SendMessageAsync($"There are currently **{users}** users in this server!");
+
+            Logger.LoggerInstance.Log("usercount", Context.Guild, Context.Channel);
+        }
+
         [RequireUserPermission(GuildPermission.ManageRoles)]
         [RequireBotPermission(GuildPermission.ManageRoles)]
         [Command("addrole"), Summary("Creates a new joinable role")]
@@ -98,41 +114,26 @@ namespace Jarvis.Modules
         }
 
 
-        [RequireBotPermission(GuildPermission.ManageRoles)]
-        [Command("join"), Summary("Joins a joinable role")]
-        private async Task Join([Remainder, Summary("Role name")] String input = null)
+
+
+
+
+
+
+
+
+
+        //Owner only commands
+
+        // ~say hello -> hello
+        [RequireOwner]
+        [Command("say"), Summary("Echos a message.")]
+        public async Task Say([Remainder, Summary("The text to echo")] string echo)
         {
-            if (input.StartsWith("+"))
-            {
-                var role = Context.Guild.Roles.FirstOrDefault(x => x.Name.ToString() == input);
+            // ReplyAsync is a method on ModuleBase
+            await ReplyAsync(echo);
 
-                if (role != null)
-                {
-                    SocketGuildUser user = Context.User as SocketGuildUser;
-
-                    if (user.Roles.Contains(role))
-                    {
-                        await Context.Channel.SendMessageAsync(user.Mention + " already has the role **" + role.ToString() + "**!");
-                    }
-                    else
-                    {
-                        await user.AddRoleAsync(role);
-                        await Context.Channel.SendMessageAsync("Successfully gave " + user.Mention + " **" + role.ToString() + "**");
-                        Logger.LoggerInstance.LogInfo("join", Context.Guild, Context.Channel, role.Name);
-                    }
-                }
-            }
-            else
-                await Context.Channel.SendMessageAsync("Unable to find joinable role: **" + input + "**");
-        }
-
-        [RequireUserPermission(GuildPermission.ManageRoles)]
-        [RequireBotPermission(GuildPermission.ManageRoles)]
-        [Command("listroles"), Summary("Lists joinable roles")]
-        private async Task ListRole()
-        {
-            await Context.Channel.SendMessageAsync("Joinable roles: ");
-            Logger.LoggerInstance.LogInfo("listroles", Context.Guild, Context.Channel, );
+            Logger.LoggerInstance.LogInfo("say", Context.Guild, Context.Channel, echo);
         }
 
         [RequireOwner]
