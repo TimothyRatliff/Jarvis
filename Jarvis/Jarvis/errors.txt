@@ -1,1 +1,2 @@
-2/2/2018 03:49:05 PM | ~haha ohno | Jarvis, a Discord bot | testing | Unknown command.
+2/5/2018 02:47:43 PM | ~ping | Jarvis, a Discord bot | testing | Field name must not be null or empty.
+Parameter name: Name

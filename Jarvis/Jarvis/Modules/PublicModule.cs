@@ -82,40 +82,40 @@ namespace Jarvis.Modules
             Logger.LoggerInstance.Log("poll", Context.Guild, Context.Channel);
         }
 
-        [RequireBotPermission(GuildPermission.ManageRoles)]
-        [Command("join"), Summary("Joins a joinable role")]
-        private async Task Join([Remainder, Summary("Role name")] String input = null)
-        {
-            if (input.StartsWith("+"))
-            {
-                var role = Context.Guild.Roles.FirstOrDefault(x => x.Name.ToString() == input);
+        //[RequireBotPermission(GuildPermission.ManageRoles)]
+        //[Command("join"), Summary("Joins a joinable role")]
+        //private async Task Join([Remainder, Summary("Role name")] String input = null)
+        //{
+        //    if (input.StartsWith("+"))
+        //    {
+        //        var role = Context.Guild.Roles.FirstOrDefault(x => x.Name.ToString() == input);
 
-                if (role != null)
-                {
-                    SocketGuildUser user = Context.User as SocketGuildUser;
+        //        if (role != null)
+        //        {
+        //            SocketGuildUser user = Context.User as SocketGuildUser;
 
-                    if (user.Roles.Contains(role))
-                    {
-                        await Context.Channel.SendMessageAsync(user.Mention + " already has the role **" + role.ToString() + "**!");
-                    }
-                    else
-                    {
-                        await user.AddRoleAsync(role);
-                        await Context.Channel.SendMessageAsync("Successfully gave " + user.Mention + " **" + role.ToString() + "**");
-                        Logger.LoggerInstance.LogInfo("join", Context.Guild, Context.Channel, role.Name);
-                    }
-                }
-            }
-            else
-                await Context.Channel.SendMessageAsync("Unable to find joinable role: **" + input + "**");
-        }
+        //            if (user.Roles.Contains(role))
+        //            {
+        //                await Context.Channel.SendMessageAsync(user.Mention + " already has the role **" + role.ToString() + "**!");
+        //            }
+        //            else
+        //            {
+        //                await user.AddRoleAsync(role);
+        //                await Context.Channel.SendMessageAsync("Successfully gave " + user.Mention + " **" + role.ToString() + "**");
+        //                Logger.LoggerInstance.LogInfo("join", Context.Guild, Context.Channel, role.Name);
+        //            }
+        //        }
+        //    }
+        //    else
+        //        await Context.Channel.SendMessageAsync("Unable to find joinable role: **" + input + "**");
+        //}
 
-        [RequireBotPermission(GuildPermission.ManageRoles)]
-        [Command("listroles"), Summary("Lists joinable roles")]
-        private async Task ListRole()
-        {
-            await Context.Channel.SendMessageAsync("Joinable roles: ");
-            Logger.LoggerInstance.Log("listroles", Context.Guild, Context.Channel);
-        }
+        //[RequireBotPermission(GuildPermission.ManageRoles)]
+        //[Command("listroles"), Summary("Lists joinable roles")]
+        //private async Task ListRole()
+        //{
+        //    await Context.Channel.SendMessageAsync("Joinable roles: ");
+        //    Logger.LoggerInstance.Log("listroles", Context.Guild, Context.Channel);
+        //}
     }
 }

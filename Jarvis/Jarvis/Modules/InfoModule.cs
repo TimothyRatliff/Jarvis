@@ -16,30 +16,64 @@ namespace Jarvis
     {
 
 		[Command("help"), Summary("Displays a list of commands.")]
+        [Alias("cmds")]
 		public async Task Help([Remainder, Summary("The list of commands")] String help = null)
 		{
-			await Context.Channel.SendMessageAsync(
-							$"{Format.Bold("Commands")}\n\n" +
-							$"{ Format.Bold("Info Commands")}\n" +
-							$"- ~help - Displays a list of commands \n" +
-							$"- ~users  - Displays the amount of users connected to this server \n" +
-							$"- ~say x - Repeats x message \n" +
-							$"- ~square x - Squares x number \n" +
-							$"- ~userinfo x- Displays user name with Discord tag number \n" +
-							$"- ~invlink - Displays the link to invite Jarvis to a server \n" +
-							$"- ~info  - Displays info about Jarvis \n" +
-							$"- ~ping  - Replies if Jarvis is online \n" +
-							$"- ~wave  - :wave: :wink: \n" +
+            //await Context.Channel.SendMessageAsync(
+            //				$"{Format.Bold("Commands")}\n\n" +
+            //				$"{ Format.Bold("Info Commands")}\n" +
+            //				$"- ~help - Displays a list of commands \n" +
+            //				$"- ~square x - Squares x number \n" +
+            //				$"- ~userinfo x- Displays user name with Discord tag number \n" +
+            //				$"- ~invlink - Displays the link to invite Jarvis to a server \n" +
+            //				$"- ~info  - Displays info about Jarvis \n" +
+            //				$"- ~ping  - Replies if Jarvis is online \n" +
+            //				$"- ~wave  - :wave: :wink: \n" +
 
-                            $"{ Format.Bold("Public Commands")}\n" +
-                            $"- ~poll x | y | z - Creates a poll with x question and y/z as the options in the poll \n" +
+            //                         $"{ Format.Bold("Public Commands")}\n" +
+            //                         $"- ~poll x | y | z - Creates a poll with x question and y/z as the options in the poll \n" +
 
 
-                            $"{ Format.Bold("Admin Commands")}\n" +
-							$"- ~purge x - Deletes x number of messages from the text channel \n" +
-							$"- ~rolecount x - Displays the amount of users in this (x) role \n" 
+            //                         $"{ Format.Bold("Admin Commands")}\n" +
+            //				$"- ~purge x - Deletes x number of messages from the text channel \n" +
+            //				$"- ~users  - Displays the amount of users connected to this server \n" +
+            //				$"- ~rolecount x - Displays the amount of users in this (x) role \n" 
 
-							);
+            //				);
+
+            var builder = new EmbedBuilder();
+            builder.WithTitle("Commands");
+            builder.WithColor(Color.Purple);
+            builder.WithDescription("Here's a list of cool things I can do!");
+            builder.WithAuthor(author =>
+            {
+                author
+                    .WithName("Jarvis")
+                    .WithUrl("http://www.jarvisbot.online")
+                    .WithIconUrl("https://i.imgur.com/JjzhG35.jpg");
+            });
+            builder.AddField("Information Commands:", 
+                "~help - Displays a list of commands \n" +
+                "~users  - Displays the amount of users connected to this server \n" +
+                "~square x - Squares x number \n" +
+                "~userinfo x- Displays user name with Discord tag number \n" +
+                "~invlink - Displays the link to invite Jarvis to a server \n" +
+                "~info  - Displays info about Jarvis \n" +
+                "~ping  - Replies if Jarvis is online \n" +
+                "~wave  - :wave: :wink: \n" +
+                "");
+            builder.AddField("Public Commands:",
+                "~poll x | y | z | t - Creates a poll with x question, y/z as the options in the poll, and t seconds to answer \n" +
+                "");
+            builder.AddField("Admin Commands:",
+                "~purge x - Deletes x number of messages from the text channel \n" +
+                "~users  - Displays the amount of users connected to this server \n" +
+                "~rolecount x - Displays the amount of users in this (x) role \n" +
+                "");
+            await Context.Channel.SendMessageAsync("", false, builder);
+
+
+
             Logger.LoggerInstance.Log("help", Context.Guild, Context.Channel);
 		}
 
@@ -108,14 +142,14 @@ namespace Jarvis
             //builder.AddField("🙄Runtime:", ".NETCore v2.0 64-bit");
             //builder.AddInlineField("Uptime:", "uptime"); 
             builder.WithTitle("Info");
+            builder.WithColor(Color.Purple);
             builder.WithDescription("Here is some info about [me](http://www.jarvisbot.online)!");
-            builder.WithUrl("http://www.jarvisbot.online");
             builder.WithAuthor(author =>
             {
                 author
                     .WithName("Jarvis")
                     .WithUrl("http://www.jarvisbot.online")
-                    .WithIconUrl("https://imgur.com/a/GdzzY");
+                    .WithIconUrl("https://i.imgur.com/JjzhG35.jpg");
             });
             builder.WithFooter(footer => {
                 footer
@@ -123,7 +157,7 @@ namespace Jarvis
                     .WithIconUrl("https://cdn.discordapp.com/embed/avatars/0.png");
             });
             builder.AddInlineField("Author:", "@Tiiiimster#0946");
-            builder.AddInlineField("Version:", "Jarvis v0.1.12");
+            builder.AddInlineField("Version:", "Jarvis v0.1.14");
             builder.AddField("Library:", "Discord.Net Core (v6)");
             builder.AddField("Runtime:", ".NETCore v2.0 64-bit");
             builder.AddField("Website:", "http://www.jarvisbot.online"); 
@@ -154,12 +188,18 @@ namespace Jarvis
 		[Command("ping"), Summary("Replies to prove Jarvis is online")]
 		private async Task Ping()
 		{
-            var bd = new EmbedBuilder();
-            bd.AddField("Pong!", " ");
-            bd.WithThumbnailUrl("https://i.imgur.com/NB96RHF.gif");
-            bd.WithImageUrl("https://cdn.discordapp.com/embed/avatars/0.png");
-            await Context.Channel.SendMessageAsync("", false, bd);
-            //await Context.Channel.SendMessageAsync("Pong!");
+            var builder = new EmbedBuilder();
+            builder.WithAuthor(author =>
+            {
+                author
+                    .WithName("Jarvis")
+                    .WithUrl("http://www.jarvisbot.online")
+                    .WithIconUrl("https://i.imgur.com/JjzhG35.jpg");
+            });
+            builder.WithColor(Color.Purple);
+            builder.AddField("Pong...", "You require more vespene gas.");
+            await Context.Channel.SendMessageAsync("", false, builder);
+
             Logger.LoggerInstance.Log("ping", Context.Guild, Context.Channel);
 		}
 

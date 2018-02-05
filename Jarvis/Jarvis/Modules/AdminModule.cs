@@ -82,36 +82,36 @@ namespace Jarvis.Modules
             Logger.LoggerInstance.Log("usercount", Context.Guild, Context.Channel);
         }
 
-        [RequireUserPermission(GuildPermission.ManageRoles)]
-        [RequireBotPermission(GuildPermission.ManageRoles)]
-        [Command("addrole"), Summary("Creates a new joinable role")]
-        private async Task AddRole([Remainder, Summary("Role name")] String input = null)
-        {
-            if (input.StartsWith("+"))
-            {
-                await Context.Guild.CreateRoleAsync(input);
-                await Context.Channel.SendMessageAsync("Created role: **" + input + "**");
-            }
-            else
-            {
-                await Context.Guild.CreateRoleAsync("+" + input);
-                await Context.Channel.SendMessageAsync("Created role: **" + input + "**");
-            }
+        //[RequireUserPermission(GuildPermission.ManageRoles)]
+        //[RequireBotPermission(GuildPermission.ManageRoles)]
+        //[Command("addrole"), Summary("Creates a new joinable role")]
+        //private async Task AddRole([Remainder, Summary("Role name")] String input = null)
+        //{
+        //    if (input.StartsWith("+"))
+        //    {
+        //        await Context.Guild.CreateRoleAsync(input);
+        //        await Context.Channel.SendMessageAsync("Created role: **" + input + "**");
+        //    }
+        //    else
+        //    {
+        //        await Context.Guild.CreateRoleAsync("+" + input);
+        //        await Context.Channel.SendMessageAsync("Created role: **" + input + "**");
+        //    }
 
-            Logger.LoggerInstance.LogInfo("addrole", Context.Guild, Context.Channel, input);
-        }
+        //    Logger.LoggerInstance.LogInfo("addrole", Context.Guild, Context.Channel, input);
+        //}
 
-        [RequireUserPermission(GuildPermission.ManageRoles)]
-        [RequireBotPermission(GuildPermission.ManageRoles)]
-        [Command("deleterole"), Summary("Deletes a role")]
-        private async Task DeleteRole([Remainder, Summary("Role name")] String input = null)
-        {
-            var role = Context.Guild.Roles.FirstOrDefault(x => x.Name.ToString() == input);
-            await role.DeleteAsync();
-            await Context.Channel.SendMessageAsync("Deleted role: **" + input + "**");
+        //[RequireUserPermission(GuildPermission.ManageRoles)]
+        //[RequireBotPermission(GuildPermission.ManageRoles)]
+        //[Command("deleterole"), Summary("Deletes a role")]
+        //private async Task DeleteRole([Remainder, Summary("Role name")] String input = null)
+        //{
+        //    var role = Context.Guild.Roles.FirstOrDefault(x => x.Name.ToString() == input);
+        //    await role.DeleteAsync();
+        //    await Context.Channel.SendMessageAsync("Deleted role: **" + input + "**");
 
-            Logger.LoggerInstance.LogInfo("deleterole", Context.Guild, Context.Channel, role.Name);
-        }
+        //    Logger.LoggerInstance.LogInfo("deleterole", Context.Guild, Context.Channel, role.Name);
+        //}
 
 
 
