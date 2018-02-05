@@ -30,7 +30,7 @@ namespace Jarvis
 			services = new ServiceCollection()
 				.BuildServiceProvider();
 
-            _client.UserJoined += WelcomeUser;
+            //_client.UserJoined += WelcomeUser;
             _client.Log += Log;
 
 			string token = File.ReadAllText("token.txt");
