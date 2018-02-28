@@ -26,7 +26,7 @@ namespace Jarvis.Modules
         //	await Context.Channel.SendMessageAsync("Welcome" + user.Mention + "to the server!");
         //	Console.WriteLine(DateTime.Now.ToString() + "	Welcome | Guild: " + Context.Guild.Name + " | Channel: " + Context.Channel.Name + " | User " + Context.User.Username + "");
         //}
-        [Command("poll"), Summary("Poll users. Reactions determine winner.")]
+        [Command("poll", RunMode = RunMode.Async), Summary("Poll users. Reactions determine winner.")]
         public async Task Poll([Remainder, Summary("The info")] String input = null)
         {
             String poll = input.ToString();
@@ -36,13 +36,17 @@ namespace Jarvis.Modules
             String option1 = abc[1];
             String option2 = abc[2];
             String time = abc[3];
-            
-
 
             var context = Context.Channel;
 
             int delay = Int32.Parse(time) * 1000;
             //const int delay = 5000;
+            //if time of poll is longer than 30 seconds
+            if(delay > 30000)
+            {
+                await context.SendMessageAsync("A poll can not run longer than 30 seconds. #ratelimits");
+                return;
+            }
 
             var builder = new EmbedBuilder();
             builder.WithTitle("Poll");
