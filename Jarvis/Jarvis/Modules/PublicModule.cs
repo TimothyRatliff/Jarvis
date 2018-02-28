@@ -14,6 +14,8 @@ namespace Jarvis.Modules
 {
     public class PublicModule : InfoModule
     {
+        //Embed color for InfoModule is builder.WithColor(Color.Blue);
+
         //private DiscordSocketClient client;
 
 
@@ -50,6 +52,7 @@ namespace Jarvis.Modules
 
             var builder = new EmbedBuilder();
             builder.WithTitle("Poll");
+            builder.WithColor(Color.Blue);
             builder.WithDescription(question);
             builder.AddField("Instructions:", "React with :thumbsup: for: **" + option1 + "**\n\n\nReact with :thumbsdown: for: **" + option2 +"**\n");
 

@@ -30,7 +30,7 @@ namespace Jarvis.addons.Logging
             Console.WriteLine($"{DateTime.Now.ToString()} | {command.ToString()} | {guild.Name} | {channel.Name}");
             try
             {
-                outstrm = new FileStream("./log.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                outstrm = new FileStream("./log.txt", FileMode.Append, FileAccess.Write);
                 writer = new StreamWriter(outstrm);
             }
             catch (Exception e)
@@ -49,7 +49,7 @@ namespace Jarvis.addons.Logging
             Console.WriteLine($"{DateTime.Now.ToString()} | {command.ToString()} | {guild.Name} | {channel.Name} | {info}");
             try
             {
-                outstrm = new FileStream("./log.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                outstrm = new FileStream("./log.txt", FileMode.Append, FileAccess.Write);
                 writer = new StreamWriter(outstrm);
             }
             catch (Exception e)
@@ -68,7 +68,7 @@ namespace Jarvis.addons.Logging
             Console.WriteLine($"{DateTime.Now.ToString()} | {command.ToString()} | {guild.Name} | {channel.Name} | {error}");
             try
             {
-                outstrm = new FileStream("./errors.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                outstrm = new FileStream("./errors.txt", FileMode.Append, FileAccess.Write);
                 writer = new StreamWriter(outstrm);
             }
             catch (Exception e)

@@ -15,7 +15,7 @@ namespace Jarvis.Modules
 {
     public class AdminModule : ModuleBase
     {
-
+        //Embed color for InfoModule is builder.WithColor(Color.Red);
 
 
         //Admin only commands

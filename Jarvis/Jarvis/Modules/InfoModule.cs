@@ -14,8 +14,9 @@ namespace Jarvis
 {
     public class InfoModule : ModuleBase
     {
+        //Embed color for InfoModule is builder.WithColor(Color.Purple);
 
-		[Command("help"), Summary("Displays a list of commands.")]
+        [Command("help"), Summary("Displays a list of commands.")]
         [Alias("cmds")]
 		public async Task Help([Remainder, Summary("The list of commands")] String help = null)
 		{
@@ -54,7 +55,6 @@ namespace Jarvis
             });
             builder.AddField("Information Commands:", 
                 "~help - Displays a list of commands \n" +
-                "~users  - Displays the amount of users connected to this server \n" +
                 "~square x - Squares x number \n" +
                 "~userinfo x- Displays user name with Discord tag number \n" +
                 "~invlink - Displays the link to invite Jarvis to a server \n" +
