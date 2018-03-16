@@ -46,7 +46,7 @@ namespace Jarvis.Modules
             //if time of poll is longer than 30 seconds
             if(delay > 30000)
             {
-                await context.SendMessageAsync("A poll can not run longer than 30 seconds. #ratelimits");
+                await context.SendMessageAsync("Tracked polls can not currently run longer than *30 seconds*. Use **~poll** with a time of *0* for an untracked poll.");
                 return;
             }
 
@@ -56,14 +56,27 @@ namespace Jarvis.Modules
             builder.WithDescription(question);
             builder.AddField("Instructions:", "React with :thumbsup: for: **" + option1 + "**\n\n\nReact with :thumbsdown: for: **" + option2 +"**\n");
 
-            IUserMessage message = await context.SendMessageAsync("", false, builder);
+            if (delay == 0)
+            {
+                builder.WithFooter(footer => {
+                    footer
+                            .WithText("Note: This is an untracked poll, vote at your leisure.");
+                });
 
-            await Task.Delay(3000);
+            }
+
+            IUserMessage message = await context.SendMessageAsync("", false, builder);
 
             await message.AddReactionAsync(new Emoji("\U0001f44d"));
             await message.AddReactionAsync(new Emoji("\U0001f44e"));
 
-            await Task.Delay(3000);
+            //await Task.Delay(3000);
+
+            if(delay == 0)
+            {
+                Logger.LoggerInstance.Log("poll", Context.Guild, Context.Channel);
+                return;
+            }
 
             var m = await context.SendMessageAsync($"Poll started! _The poll will end in {delay / 1000} seconds._");
             await Task.Delay(delay);
