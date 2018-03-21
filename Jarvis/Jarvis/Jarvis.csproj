@@ -16,6 +16,7 @@
     <PackageReference Include="Discord.Net.Modules" Version="0.9.6" />
     <PackageReference Include="Discord.Net.Webhook" Version="1.0.2" />
     <PackageReference Include="Discord.Net.WebSocket" Version="1.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
 </Project>

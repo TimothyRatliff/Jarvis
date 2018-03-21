@@ -102,6 +102,53 @@ namespace Jarvis.Modules
             Logger.LoggerInstance.Log("poll", Context.Guild, Context.Channel);
         }
 
+        [Command("remind", RunMode = RunMode.Async), Summary("Remind message will be sent in this channel at specified time.")]
+        public async Task Remind([Remainder, Summary("Time to reminded")] String input = null)
+        {
+            String reminder = input.ToString();
+            String[] breaks = { "|" };
+            String[] abc = reminder.Split(breaks, StringSplitOptions.RemoveEmptyEntries);
+            String remindmsg = abc[0];
+            String time = abc[1];
+            String timef = abc[2];
+
+            int delay = Int32.Parse(time);
+
+            if(timef == "d")
+            {
+                await Context.Channel.SendMessageAsync($"Reminder *{remindmsg}* set for *{delay}* days. Warning: reminders set for multiple days have a chance of not going through.");
+                double days = Convert.ToDouble(delay);
+                TimeSpan milidays = TimeSpan.FromDays(days);
+                await Task.Delay((int) milidays.TotalMilliseconds);
+            }
+
+            if (timef == "m")
+            {
+                await Context.Channel.SendMessageAsync($"Reminder *{remindmsg}* set for *{delay}* minutes.");
+                double minutes = Convert.ToDouble(delay);
+                TimeSpan milimintues = TimeSpan.FromMinutes(minutes);
+                await Task.Delay((int) milimintues.TotalMilliseconds);
+            }
+
+            if(timef == "s")
+            {
+                await Context.Channel.SendMessageAsync($"Reminder *{remindmsg}* set for *{delay}* seconds.");
+                double seconds = Convert.ToDouble(delay);
+                TimeSpan milis = TimeSpan.FromSeconds(seconds);
+                await Task.Delay((int) milis.TotalMilliseconds);
+            }
+
+            var builder = new EmbedBuilder();
+            builder.WithTitle("Reminder");
+            builder.WithColor(Color.Blue);
+            builder.WithDescription(remindmsg);
+            builder.AddField($"@ {Context.User.Mention}", $"Reminder: **{remindmsg}**");
+
+            IUserMessage message = await Context.Channel.SendMessageAsync("", false, builder);
+
+            Logger.LoggerInstance.Log("remind", Context.Guild, Context.Channel);
+        }
+
         //[RequireBotPermission(GuildPermission.ManageRoles)]
         //[Command("join"), Summary("Joins a joinable role")]
         //private async Task Join([Remainder, Summary("Role name")] String input = null)
