@@ -7,4 +7,6 @@ Jarvis/.vs/Jarvis
 Jarvis/Jarvis/bin/Debug
 Jarvis/Jarvis/obj/Debug
 Jarvis/Jarvis/log.txt
-Jarvist/Jarvis/errors.txt
+Jarvis/Jarvis/errors.txt
+*.txt
+*.cache
