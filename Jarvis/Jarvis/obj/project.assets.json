@@ -1461,12 +1461,12 @@
       ]
     },
     "Discord.Net.Modules/0.9.6": {
-      "sha512": "/GQ/nn+HrcoDZOHFVx80cbyAW5XK4G5moXc81leXZ6Nc8DY1Ke8RBtIBxgSmTYbGP6T/DfRhYTTX4JTiverjYA==",
+      "sha512": "NHQ24yIzXNlyMUD3HGcoxWDv5dcfOt1a//M3sO+aRDNH5gWrNqjNNCPNFp4AoUOFVqEZZinlIVISyMnCDjacYw==",
       "type": "package",
       "path": "discord.net.modules/0.9.6",
       "files": [
-        "discord.net.modules.0.9.6.nupkg.sha512",
-        "discord.net.modules.nuspec",
+        "Discord.Net.Modules.0.9.6.nupkg.sha512",
+        "Discord.Net.Modules.nuspec",
         "lib/net45/Discord.Net.Modules.dll",
         "lib/netstandard1.3/Discord.Net.Modules.dll"
       ]
@@ -4647,9 +4647,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\TimothyRatliff\\Documents\\GitHub\\Jarvis\\Jarvis\\Jarvis\\Jarvis.csproj",
       "projectName": "Jarvis",
