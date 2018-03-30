@@ -123,7 +123,8 @@ namespace Jarvis.Modules
 
             if (timef == "d" || timef == " d")
             {
-                await Context.Channel.SendMessageAsync($"Reminder *{remindmsg}* set for *{delay}* days. :white_check_mark: *Warning: reminders set for multiple days currently have a chance of not going through due to limited thread capacity.*");
+                await Context.Channel.SendMessageAsync($"Reminder **{remindmsg}** set for **{delay}** days. :white_check_mark: " +
+                    $"*Warning: reminders set for multiple days currently have a chance of not going through due to limited thread capacity.*");
                 double days = Convert.ToDouble(delay);
                 TimeSpan milidays = TimeSpan.FromDays(days);
                 await Task.Delay((int) milidays.TotalMilliseconds);
@@ -131,7 +132,7 @@ namespace Jarvis.Modules
 
             if (timef == "m" || timef == " m")
             {
-                await Context.Channel.SendMessageAsync($"Reminder *{remindmsg}* set for *{delay}* minutes. :white_check_mark:");
+                await Context.Channel.SendMessageAsync($"Reminder **{remindmsg}** set for **{delay}** minutes. :white_check_mark:");
                 double minutes = Convert.ToDouble(delay);
                 TimeSpan milimintues = TimeSpan.FromMinutes(minutes);
                 await Task.Delay((int) milimintues.TotalMilliseconds);

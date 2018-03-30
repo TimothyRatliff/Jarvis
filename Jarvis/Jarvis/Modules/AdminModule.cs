@@ -150,5 +150,28 @@ namespace Jarvis.Modules
             await Context.Channel.SendMessageAsync("Keep yourself safe! https://imgur.com/gallery/MZjUO");
         }
 
+        [RequireOwner]
+        [Command("servers", RunMode = RunMode.Async), Summary("List of servers Jarvis is in.")]
+        private async Task Servers()
+        {
+            IReadOnlyCollection<IGuild> allguilds = await Context.Client.GetGuildsAsync();
+            int number = allguilds.Count();
+            List<String> guildnames = new List<string>();
+
+            for(int i=0; i<number; i++)
+            {
+                guildnames.Add(allguilds.ElementAt(i).ToString());
+            }
+
+            var builder = new EmbedBuilder();
+            builder.WithColor(Color.Red);
+            int index = 0;
+            foreach(string guild in guildnames)
+            {
+                index++;
+                builder.AddField($"{index}", guild);
+            }
+            await Context.Channel.SendMessageAsync("", false, builder);
+        }
     }
 }
