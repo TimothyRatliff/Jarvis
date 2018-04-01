@@ -103,7 +103,7 @@ namespace Jarvis.Modules
         }
 
         [Command("remind", RunMode = RunMode.Async), Summary("Remind message will be sent in this channel at specified time.")]
-        public async Task Remind([Remainder, Summary("Time to reminded")] String input = null)
+        public async Task Remind([Remainder, Summary("Time to be reminded")] String input = null)
         {
             String reminder = input.ToString();
             String[] breaks = { "|" };
@@ -157,6 +157,29 @@ namespace Jarvis.Modules
 
             Logger.LoggerInstance.Log("remind", Context.Guild, Context.Channel);
         }
+
+        [Command("enhance"), Summary("Enhances user's nickname")]
+        public async Task Enhance()
+        {
+            await (Context.User as IGuildUser)?.ModifyAsync(x =>
+            {
+                x.Nickname = $"Josh";
+                
+            });
+
+            await Context.Channel.SendMessageAsync($"{Context.User.Mention} has been *enhanced*");
+
+            Logger.LoggerInstance.Log("enhance", Context.Guild, Context.Channel);
+        }
+
+
+
+
+
+
+
+
+
 
         //[RequireBotPermission(GuildPermission.ManageRoles)]
         //[Command("join"), Summary("Joins a joinable role")]

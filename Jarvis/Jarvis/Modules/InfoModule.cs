@@ -64,7 +64,8 @@ namespace Jarvis
                 "");
             builder.AddField("Public Commands:",
                 "~poll x | y | z | t - Creates a poll with x question, y/z as the options in the poll, and t seconds to answer \n" +
-                "");
+                "~remind x | y | s/m/d - Sends x reminder in y seconds/minutes/days \n" +
+                "~enhance - Enhances your nickname \n");
             builder.AddField("Admin Commands:",
                 "~purge x - Deletes x number of messages from the text channel \n" +
                 "~users  - Displays the amount of users connected to this server \n" +
@@ -157,7 +158,7 @@ namespace Jarvis
                     .WithIconUrl("https://cdn.discordapp.com/embed/avatars/0.png");
             });
             builder.AddInlineField("Author:", "@Tiiiimster#0946");
-            builder.AddInlineField("Version:", "Jarvis v0.1.14");
+            builder.AddInlineField("Version:", "Jarvis v0.1.15b");
             builder.AddField("Library:", "Discord.Net Core (v6)");
             builder.AddField("Runtime:", ".NETCore v2.0 64-bit");
             builder.AddField("Website:", "http://www.jarvisbot.online"); 
