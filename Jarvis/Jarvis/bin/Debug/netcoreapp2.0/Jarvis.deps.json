@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "81545126bdf58f11cfa451f24cf58304f8e45644"
+    "signature": "5d8dfdaa271e59fe7a41e5e36bb2d909aacca637"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,6 +14,7 @@
           "Discord.Net.Modules": "0.9.6",
           "Discord.Net.WebSocket": "1.0.2",
           "Discord.Net.Webhook": "1.0.2",
+          "LiteDB": "4.1.2",
           "Newtonsoft.Json": "11.0.1"
         },
         "runtime": {
@@ -94,6 +95,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Discord.Net.WebSocket.dll": {}
+        }
+      },
+      "LiteDB/4.1.2": {
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.dll": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/1.1.1": {
@@ -566,6 +576,12 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Reflection.TypeExtensions/4.3.0": {
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Resources.ResourceManager/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Targets": "1.1.0",
@@ -898,7 +914,7 @@
     "Discord.Net.Modules/0.9.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NHQ24yIzXNlyMUD3HGcoxWDv5dcfOt1a//M3sO+aRDNH5gWrNqjNNCPNFp4AoUOFVqEZZinlIVISyMnCDjacYw==",
+      "sha512": "sha512-/GQ/nn+HrcoDZOHFVx80cbyAW5XK4G5moXc81leXZ6Nc8DY1Ke8RBtIBxgSmTYbGP6T/DfRhYTTX4JTiverjYA==",
       "path": "discord.net.modules/0.9.6",
       "hashPath": "discord.net.modules.0.9.6.nupkg.sha512"
     },
@@ -929,6 +945,13 @@
       "sha512": "sha512-18TAK7E8iOYv6GRkaJwkI0SCfp6iB/YZ3c6ToW70RwoFV0nlBLfphzH1r4BL76YvYg5yt1NHAoglGNjn5URamQ==",
       "path": "discord.net.websocket/1.0.2",
       "hashPath": "discord.net.websocket.1.0.2.nupkg.sha512"
+    },
+    "LiteDB/4.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lqjADPYzH9eKOJTFB9cHXhqPCHnSrgACoxsX6wxLGK1hyIRewv1HcY4TyXV/xZ0y8IjRZhVQyAvhbJUoNg/7xQ==",
+      "path": "litedb/4.1.2",
+      "hashPath": "litedb.4.1.2.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/1.1.1": {
       "type": "package",
@@ -1251,6 +1274,13 @@
       "sha512": "sha512-5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
       "path": "system.reflection.primitives/4.3.0",
       "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.TypeExtensions/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7u6ulLcZbyxB5Gq0nMkQttcdBTx57ibzw+4IOXEfR+sXYQoHvjW5LTLyNr8O22UIMrqYbchJQJnos4eooYzYJA==",
+      "path": "system.reflection.typeextensions/4.3.0",
+      "hashPath": "system.reflection.typeextensions.4.3.0.nupkg.sha512"
     },
     "System.Resources.ResourceManager/4.3.0": {
       "type": "package",

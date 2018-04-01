@@ -158,19 +158,19 @@ namespace Jarvis.Modules
             Logger.LoggerInstance.Log("remind", Context.Guild, Context.Channel);
         }
 
-        [Command("enhance"), Summary("Enhances user's nickname")]
-        public async Task Enhance()
-        {
-            await (Context.User as IGuildUser)?.ModifyAsync(x =>
-            {
-                x.Nickname = $"Josh";
+        //[Command("enhance"), Summary("Enhances user's nickname")]
+        //public async Task Enhance()
+        //{
+        //    await (Context.User as IGuildUser)?.ModifyAsync(x =>
+        //    {
+        //        x.Nickname = $"Josh";
                 
-            });
+        //    });
 
-            await Context.Channel.SendMessageAsync($"{Context.User.Mention} has been *enhanced*");
+        //    await Context.Channel.SendMessageAsync($"{Context.User.Mention} has been *enhanced*");
 
-            Logger.LoggerInstance.Log("enhance", Context.Guild, Context.Channel);
-        }
+        //    Logger.LoggerInstance.Log("enhance", Context.Guild, Context.Channel);
+        //}
 
 
 
