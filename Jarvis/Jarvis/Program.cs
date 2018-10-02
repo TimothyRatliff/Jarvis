@@ -37,7 +37,7 @@ namespace Jarvis
 			await InstallCommands();
 			await _client.LoginAsync(TokenType.Bot, token);
 			await _client.StartAsync();
-			await _client.SetGameAsync("jarvisbot.online");
+			await _client.SetGameAsync("~help for commands");
 
 
             // Block this task until the program is closed.

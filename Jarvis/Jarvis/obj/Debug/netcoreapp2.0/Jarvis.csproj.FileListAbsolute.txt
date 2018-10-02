@@ -9,7 +9,6 @@ C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcore
 C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.AssemblyInfo.cs
 C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.dll
 C:\Users\Timothy Ratliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.pdb
-C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.csprojResolveAssemblyReference.cache
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.csproj.CoreCompileInputs.cache
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.AssemblyInfoInputs.cache
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.AssemblyInfo.cs
@@ -20,3 +19,4 @@ C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netcorea
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netcoreapp2.0\Jarvis.runtimeconfig.dev.json
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netcoreapp2.0\Jarvis.dll
 C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\netcoreapp2.0\Jarvis.pdb
+C:\Users\TimothyRatliff\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\netcoreapp2.0\Jarvis.csprojAssemblyReference.cache
