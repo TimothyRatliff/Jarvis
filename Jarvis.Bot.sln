@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarvis.Bot", "Jarvis.Bot\Jarvis.Bot.csproj", "{AF822770-7B67-4BBE-BF0A-194C0DDF1EBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF822770-7B67-4BBE-BF0A-194C0DDF1EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF822770-7B67-4BBE-BF0A-194C0DDF1EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF822770-7B67-4BBE-BF0A-194C0DDF1EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF822770-7B67-4BBE-BF0A-194C0DDF1EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {746550E8-CCE9-4757-88EA-FFE72E06BDFC}
+	EndGlobalSection
+EndGlobal
