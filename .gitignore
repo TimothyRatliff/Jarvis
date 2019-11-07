@@ -1,15 +1,4 @@
-
-Jarvis/Jarvis/token.txt
-Jarvis/Jarvis/Jarvis/bin
-Jarvis/Jarvis/Jarvis/obj/Debug
-Jarvis/Jarvis/Jarvis/obj/Release
-Jarvis/.vs/Jarvis
-Jarvis/Jarvis/bin/Debug
-Jarvis/Jarvis/obj/Debug
-Jarvis/Jarvis/log.txt
-Jarvis/Jarvis/errors.txt
-*.txt
-*.cache
+appsettings.json
 
 # Visual Studio gitignore https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 # User-specific files
